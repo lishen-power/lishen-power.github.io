@@ -4,9 +4,22 @@
   
   
   <entry>
-    <title></title>
-    <link href="undefined2019/10/17/%E7%AE%80%E5%8D%95%E7%9A%84%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <url>2019/10/17/%E7%AE%80%E5%8D%95%E7%9A%84%E5%88%A9%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <title>OPP思想(面向对象思想)</title>
+    <link href="undefined2019/10/18/OPP%E6%80%9D%E6%83%B3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/"/>
+    <url>2019/10/18/OPP%E6%80%9D%E6%83%B3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/</url>
+    
+    <content type="html"><![CDATA[<h1 id="OOP思想应该怎样来理解？"><a href="#OOP思想应该怎样来理解？" class="headerlink" title="OOP思想应该怎样来理解？"></a><a href="https://www.cnblogs.com/bluealine/p/8664561.html" target="_blank" rel="noopener">OOP思想应该怎样来理解？</a></h1><blockquote><p><a href="https://blog.csdn.net/qq157962718/article/details/50990154" target="_blank" rel="noopener">https://blog.csdn.net/qq157962718/article/details/50990154</a></p><p><a href="https://www.cnblogs.com/xiaosongluffy/p/5072501.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiaosongluffy/p/5072501.html</a></p><p><a href="https://blog.csdn.net/sinat_37212928/article/details/72874598" target="_blank" rel="noopener">https://blog.csdn.net/sinat_37212928/article/details/72874598</a></p></blockquote><p>它强调对象的“抽象”、“封装”、“继承”、“多态”。<br>  OOP思想浅谈 收藏<br>07年11月27号在校内举办了第一次技术讲座，主题是Java now and future.和以往的同主题的讲座不同，我在讲座里面着重讲了一下我对OOP思想的理解并对比了Java和C++的区别，这也是很多编程爱好者所津津乐道的话题，至于大家喜欢哪种编程语言我个人觉得主要决定于自己的性格，当初喜欢Java也是因为其跨平台的特点，和外向兴趣广泛的我一样，能让生活充满更多的乐趣和颜色。</p><p>​    下面浅谈下我对OOP思想的理解，OOP思想中很重要的有五点，类，对象，还有面向对象的三大特征：继承，多态和封装。</p><p>​    类：对现实世界事物的抽象表示，包括事物的状态信息（成员变量）和行为信息（成员方法）。我们要让我们的计算机程序设计更有意思，也更有逻辑性，则我们的程序中对事物的描叙就必须符合真实情况，同时符合人类的思维习惯。因此，我们如果在计算中要描叙人这个事物，也是一类事物，我们就必须把该事物的所有特点包含进来，用成员变量描叙人的基本属性，如：身高，体重，年龄，性别等。这样就可以描叙一个“静态”的人了，所谓静态的意思也就是该人并不参与任何社会活动，没有任何行为。但是这样并不符合现实意义，那样我们必须为人添上行为，让他参加社会活动有自己的行为。所以我们需要用成员方法来描叙人的活动，如：吃饭，洗澡，睡觉等。</p><p>​    对象：对抽象事物的具体表示，使其具有自身的特点。类好比一个大的集合，里面的元素都有共同的特点，但是比较每个元素又可以发现每个有其自身的特点，对象就是这样，它是一个类的具体化，也是实例化，类是泛指，而对象是特指。虽然人都有身高，体重，年龄，同时有行为有吃饭，洗澡，睡觉等，但是当具体到某个人的时候就会有不同，例如：老人和小孩的年龄就有不同，所以，从类到对象是我们把现实事物进行计算机描叙的过程，同时也是一个从抽象到具体的过程，这很符合我们的真实思维逻辑。</p><p>​    下面浅谈一下面向对象的三大特征的基本思想。</p><p>​    多态：用一种解决方案来解决对一类问题，对于不同的事物解决途径和结果不同。在C++中实现多态性有三种方法，分别是：虚函数，函数重载和运算符重载。这三种方法大家都可以看到我们解决问题的初衷是一样的，都是利用同名函数，同名的运算符号，这抽象出来也就是解决问题的方法，但是对于不同的事物的反应却是不同的，例如：当用一个getPadNumber()方法来得到普通自行车和双人自行车的坐垫数量的时候，返回的结果是一个和两个，这就是具体的事物返回的结果不同。</p><p>​    继承：让抽象出来的事物具有本应该具有的联系。我们能用类来描叙一个抽象的事物，同时能用对象来描叙具体的事物，但是这些事物都是独立的，彼此之间没有应该有的联系，这样的孤立设计并不符合现实逻辑，让事物之间的联系得到描叙，我们就需要继承，例如：发明自行车的人并不是一开始就发明了多人自行车，这些都是从双轮自行车演变和发展而来，但是他们都有共同的特点，有轮子，有车架子，等等。让我们用继承的关系把这两个现实的抽象联系起来，这样我们就能设计出不孤立的类，而是和其他类有联系的类。</p><p>​    封装：让抽象的事物保护自身的状态，防止非其他事物对其进行错误的状态改变操作。我们抽象完一个事物后，可能在特定的条件下，其本身的状态需要改变，但是这个改变并允许其他的事物来进行，这样的改变只允许这个事物认同的操作域来进行，可以是该事物本身，也可以是它信任的其他事物。这样我们就能对我们抽象完的每个事物进行自身数据的保护。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>使用hexo简单的搭建博客</title>
+    <link href="undefined2019/10/18/%E4%BD%BF%E7%94%A8hexo%E7%AE%80%E5%8D%95%E7%9A%84%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <url>2019/10/18/%E4%BD%BF%E7%94%A8hexo%E7%AE%80%E5%8D%95%E7%9A%84%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
     
     <content type="html"><![CDATA[<h1 id="简单的利用hexo搭建博客"><a href="#简单的利用hexo搭建博客" class="headerlink" title="简单的利用hexo搭建博客"></a>简单的利用hexo搭建博客</h1><h6 id="1-安装需要的插件"><a href="#1-安装需要的插件" class="headerlink" title="1.安装需要的插件"></a>1.安装需要的插件</h6><p> 安装node.js插件(<a href="https://nodejs.xn--org%29-800ki30ackjnv1ibvgjmh4v5d/" target="_blank" rel="noopener">https://nodejs.org)安装在默认路径</a> node -v验证<br>安装Git工具(<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads)安装在默认路径</a></p><h6 id="2-打开git创建文件夹来搭建博客环境"><a href="#2-打开git创建文件夹来搭建博客环境" class="headerlink" title="2.打开git创建文件夹来搭建博客环境"></a>2.打开git创建文件夹来搭建博客环境</h6><p> mkdir（创建文件夹命令）<br>cd （进入和退出到某路径）</p><p> 创建一个boke/blog文件夹</p><h6 id="3-安装hexo框架"><a href="#3-安装hexo框架" class="headerlink" title="3.安装hexo框架"></a>3.安装hexo框架</h6><p> 首先安装个cnpm提高速度（npm install -g cnpm –registry=<a href="https://registry.npm.taobao.xn--org%29cnpm-up6mk450a/" target="_blank" rel="noopener">https://registry.npm.taobao.org）再用cnpm</a> -来验证是否安装好了</p><p> 然后安装hexo框架（cnpm install -g hexo-cli）安装hexo （hexo -v验证）</p><h6 id="4-利用hexo框架开始搭建"><a href="#4-利用hexo框架开始搭建" class="headerlink" title="4.利用hexo框架开始搭建"></a>4.利用hexo框架开始搭建</h6><p> 1.hexo初始化（hexo init）</p><p> 2.hexo创建 (hexo g)</p><p> 3.第一次使用要在终端输入你的用户名和邮件</p><p> 用户名输入命令:git config –global user.name “github用户名”<br>邮件输入命令为:git config –global user.email “<a href="mailto:1599537548@qq.com" target="_blank" rel="noopener">1599537548@qq.com</a>“</p><p> 4.命令三连hexo clean , hexo g , hexo d;</p><h6 id="5-配置-config-yml文件"><a href="#5-配置-config-yml文件" class="headerlink" title="5.配置_config.yml文件"></a>5.配置_config.yml文件</h6><p> 1.安装部署插件服务器插件: npm install hexo-deployer-git -–save</p><p> 2.在_config.yml最底部</p><p> 配置如下：</p><p> deployer:</p><p> type: git<br>repo: 仓库地址<br>branch :master</p>]]></content>
     
