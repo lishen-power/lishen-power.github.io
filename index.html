@@ -128,26 +128,39 @@
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/14/函数柯里化/">
-        <p class="h4 index-header">函数柯里化及其使用到的案例</p>
+      <a href="/2019/11/16/BFC块格式化上下文/">
+        <p class="h4 index-header">BFC块格式化上下文</p>
         
         
           
         
         <div class="index-excerpt" >
-          <div class="index-text mb-1">函数柯里化123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport"          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.</div>
+          <div class="index-text mb-1">什么是BFC？为什么这个概念一直被提起？？为什么每一个人都解释不清BFC？？？
+什么是BFC？BFC 全称为 块格式化上下文 (Block Formatting Context) 。
+从这个概念里你能看出来什么吗？
+这个名字给我们的信息只有 “块” “格式化” “上下文” 。我们大概可以了解到这个东西是对上下文起作用的。 那里的上下文？？ HTML文档！ 它大概的作用，貌似是格式化上下文？？可能不是我们通常意义中的格式化。
+我们没有从这个名字中得到太多有用的信息，仅仅知道它是一种功能，针对于 HTML文档 起作用。
+那我们去看看官方是怎么解释的。
+MDN：
+
+一个块格式化上下文（block formatting context） 是Web页面的可视化CSS渲染出的一部分。它是块级盒布局出现的区域，也是浮动层元素进行交互的区域。 一个块格式化上下文由以下之一创建：
+
+根元素或其它包含它的元素
+浮动元素 (元素的 float 不是 none)
+绝对定位元素 (元素具有 position 为 absolute 或 fixed)
+内联块 (元素具有 display: inline-block)</div>
         </div>
       </a>
 
       <div>
         
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-14&nbsp;&nbsp;
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-16&nbsp;&nbsp;
         
         
         
           <i class="iconfont icon-tag"></i>
           
-            <a href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96">函数柯里化</a>&nbsp;
+            <a href="/tags/BFC">BFC</a>&nbsp;
           
         
       </div>
@@ -178,6 +191,36 @@
           <i class="iconfont icon-tag"></i>
           
             <a href="/tags/call%E5%92%8Capply">call和apply</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/14/函数柯里化/">
+        <p class="h4 index-header">函数柯里化及其使用到的案例</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">函数柯里化123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport"          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-14&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96">函数柯里化</a>&nbsp;
           
         
       </div>
@@ -470,59 +513,6 @@ JavaScript组成:浏览器端JavaScript:   ECMA标准语法   +  DOM  + BOM服�
           <i class="iconfont icon-tag"></i>
           
             <a href="/tags/html4">html4</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/22/Ajax数据交互/">
-        <p class="h4 index-header">Ajax数据交互</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Ajax数据交互
-何为数据交互?  =&gt;  前后端数据的交互 (前端向后端发起数据请求 ,由后端响应数据给前端)
-Ajax : 在浏览器与服务器之间异步加载数据 . (web2.0重要技术) 可以在不重载整个页面的情况下 ,更新页面的某一块内容 
-
-
-因涉及后端数据交互 ,所以需要有后端服务.(后台 / 服务器环境)
-准备工作: 搭建一个本地开发测试(服务器)环境搭建一台本地的web服务器 ,让自己的pc充当为一台本地的服务器(其实就是一台性能比普通电脑更高的电脑,24小时不关机,给其他的pc或终端提供服务使用).
-目前主流的服务器的操作系统:
-
-windows server 2008 (窗口式操作)
-Linux (centOS )
-Unix
-
-常见的服务:
-​    web服务:搭建网站提供给互联网用户访问
-​    smtp服务: 提供电子邮件发送服务
-​    ftp服务: 提供文件共享服务(传输)
-
-常用于搭建web服务的软件:
-IIS 微软 因特网信息服务  (运行在windows服务器上)
-
-Apache  (linux , windows)
-
-Nginx (linu</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-22&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/ajax">ajax</a>&nbsp;
           
         
       </div>
