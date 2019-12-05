@@ -128,6 +128,66 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/12/05/js中的跨域问题解决/">
+        <p class="h4 index-header">js中的跨域及其解决的办法</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">js中的跨域及其解决的办法一、什么是跨域？在了解跨域之前，首先要知道什么是同源策略（same-origin policy）。简单来讲同源策略就是浏览器为了保证用户信息的安全，防止恶意的网站窃取数据，禁止不同域之间的JS进行交互。对于浏览器而言只要域名、协议、端口其中一个不同就会引发同源策略，从而限制他们之间如下的交互行为：
+1.Cookie、LocalStorage和IndexDB无法读取；
+2.DOM无法获得；
+3.AJAX请求不能发送。
+跨域的严格一点的定义是：只要协议，域名，端口有任何一个的不同，就被当作是跨域。
+如下表所示：    
+
+
+
+URL
+说明
+是否允许通信
+
+
+
+http://www.a.com/a.jshttp://www.a.com/b.js
+同一域名下
+允许
+
+
+http://www.a.com/lab/a.jshttp://www.a.com/script/b.js
+同一域名下不同文件夹
+允许
+
+
+http://www.a.com:8000/a.jshttp://www.a.com/b.js
+同一域名，不同端口
+不允许
+
+
+http://www.a.com/a</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-05&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/javascript%E8%B7%A8%E5%9F%9F">javascript跨域</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/11/16/HTML5+css3/">
         <p class="h4 index-header">HTML5+css3</p>
         
@@ -201,36 +261,6 @@ MDN：
     
     
     <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/14/对象的call方法和数组的apply方法/">
-        <p class="h4 index-header">对象的call方法和数组的apply方法</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">对象的call方法和数组的apply方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot;          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-14&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/call%E5%92%8Capply">call和apply</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/11/14/函数柯里化/">
         <p class="h4 index-header">函数柯里化及其使用到的案例</p>
         
@@ -251,6 +281,36 @@ MDN：
           <i class="iconfont icon-tag"></i>
           
             <a href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96">函数柯里化</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/14/对象的call方法和数组的apply方法/">
+        <p class="h4 index-header">对象的call方法和数组的apply方法</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">对象的call方法和数组的apply方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot;          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    </div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-14&nbsp;&nbsp;
+        
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/call%E5%92%8Capply">call和apply</a>&nbsp;
           
         
       </div>
@@ -473,45 +533,6 @@ gif
           <i class="iconfont icon-tag"></i>
           
             <a href="/tags/photoshop">photoshop</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/10/22/javascript编程基础/">
-        <p class="h4 index-header">javascript编程基础</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">JavaScript编程基础
-JavaScript 诞生于1995 年。当时，它的主要目的是处理以前由服务器端语言（如Perl）负责的一些输入验证操作。在JavaScript 问世之前，必须把表单数据发送到服务器端才能确定用户是否没有填写某个必填域，是否输入了无效的值。
-网景(Netscape) 最先提出的 , 早期用于解决客户端表单输入验证,随着网络发展,已经逐步延伸到互联网各个领域.(网页的各种交互 \ 基于js语言开发的后端 \ 物联网 \ 移动设备…)
-
-
-截止目前: JavaScript 已经成为客户端脚本的标志性语言 ,在JavaScript家族中,目前两大成员:
-​    1.浏览器端JavaScript = &gt; window (负责 DOM + BOM 等浏览器的交互)
-​    2.服务器端JavaScript = &gt; nodejs ( 负责服务器端程序 定义为一门后台语言,类似java \ php 等 )
-
-JavaScript组成:浏览器端JavaScript:   ECMA标准语法   +  DOM  + BOM服务器端JavaScript:   E</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-10-22&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/javascript">javascript</a>&nbsp;
           
         
       </div>
