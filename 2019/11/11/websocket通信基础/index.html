@@ -1,144 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+
+
 <head><meta name="generator" content="Hexo 3.9.0">
-    <meta charset="utf-8">
-    
-        <title>websocket基础 | </title>
-    
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="哈哈哈嗝~">
+  <meta name="author" content="Luking Xun">
+  <meta name="keywords" content="噗哈哈哈">
+  <title>websocket基础 ~ 永恒的金色年华</title>
+  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+  
+    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  
+  <link rel="stylesheet" href="/css/main.css">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<meta name="format-detection" content="telephone=no">
-<meta name="author" content="Luking Xun">
-<meta name="designer" content="minfive">
-<meta name="keywords" content="噗哈哈哈">
-<meta name="description" content="哈哈哈嗝~">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="format-detection" content="telephone=yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="robots" content="all">
-
-<link rel="canonical" href="http://yoursite.com/2019/11/11/websocket通信基础/index.html">
-
-<link rel="icon" type="image/png" href="undefined" sizes="32x32">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Prefetch -->
-
-
-
-
-
-
-<!-- CSS -->
-<link rel="stylesheet" href="/scss/base/index.css">
-
-<!-- RSS -->
-<link rel="alternate" href="/atom.xml" title="永恒的金色年华">
-
-<!-- 统计 -->
-<!-- 百度统计 -->
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
-
-    
-    
-    <link rel="stylesheet" href="/scss/views/page/post.css">
-
+  
 </head>
-<body ontouchstart>
-    
-        <!-- loading 页面 -->
-<div id="page-loading" class="page page-loading" style="background-image: url('undefined')"></div>
-    
 
-    <div id="page" class="page js-hidden">
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>永恒的金色年华</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-    <!-- 页头 -->
-<header class="page__small-header page__header--small">
-    <nav class="page__navbar">
-        <div class="page__container navbar-container">
-            <a class="page__logo" href="/" title="永恒的金色年华" alt="永恒的金色年华">
-                <img src="undefined" alt="永恒的金色年华">
-            </a>
-
-            <nav class="page__nav">
-                <ul class="nav__list clearfix">
-                    
-                </ul>
-            </nav>
-
-            <button class="page__menu-btn" type="button">
-                <i class="iconfont icon-menu"></i>
-            </button>
-        </div>
-    </nav>
-</header>
-
-
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">主页</a>
+          </li>
         
-    <main class="page__container page__main">
-    <div class="page__content">
-        <article class="page__post">
-    <div class="post__cover">
-        <img src="undefined" alt="websocket基础">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">档案</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">分类目录</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">标签</a>
+          </li>
+        
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
+  </div>
 
-    <header class="post__info">
-        <h1 class="post__title">websocket基础</h1>
 
-        <div class="post__mark">
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-write"></i>
-                <ul class="mark__list clearfix">
-                    
-                        <li class="mark__item">
-                            <a href="/">undefined</a>
-                        </li>
-                    
-                </ul>
-            </div>
-            
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-time"></i>
-                <ul class="mark__list clearfix">
-                    <li class="mark__item"><span>2019-11-11</span></li>
-                </ul>
-            </div>
+</nav>
 
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-tab"></i>
-                <ul class="mark__list clearfix">
-                    
-                        <li class="mark__item">
-                            <a href="/tags/websocket/">Websocket</a>
-                        </li>
-                    
-                </ul>
-            </div>
+    <div class="view intro-2" id="background"
+         style="background: url('/img/无与伦比图片.jpg')no-repeat center center;
+           background-size: cover;
+           background-attachment: fixed;">
+      <div class="full-bg-img">
+        <div class="mask rgba-black-light flex-center">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
 
             
+              <br>
+              <p class="mt-3">Monday, November 11th 2019, 5:15 pm</p>
+            
+          </div>
+
+          
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <div class="post__content">
-        <h1 id="websocket基础"><a href="#websocket基础" class="headerlink" title="websocket基础"></a>websocket基础</h1><h5 id="websocket-通信协议"><a href="#websocket-通信协议" class="headerlink" title="websocket 通信协议"></a>websocket 通信协议</h5><h6 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h6><p>​        1.不受浏览器同源策略限制<br>​        2.长连接协议<br>​        3.双向通信协议(只要通信连接了,那么就会一直保持,除非有一端        主动断开,那就断开连接)</p>
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h1 id="websocket基础"><a href="#websocket基础" class="headerlink" title="websocket基础"></a>websocket基础</h1><h5 id="websocket-通信协议"><a href="#websocket-通信协议" class="headerlink" title="websocket 通信协议"></a>websocket 通信协议</h5><h6 id="特点"><a href="#特点" class="headerlink" title="特点:"></a>特点:</h6><p>​        1.不受浏览器同源策略限制<br>​        2.长连接协议<br>​        3.双向通信协议(只要通信连接了,那么就会一直保持,除非有一端        主动断开,那就断开连接)</p>
 <h5 id="http-https-ftp-通信协议"><a href="#http-https-ftp-通信协议" class="headerlink" title="http / https  / ftp 通信协议"></a>http / https  / ftp 通信协议</h5><h6 id="http协议特点-单向通信"><a href="#http协议特点-单向通信" class="headerlink" title="http协议特点 : (单向通信)"></a>http协议特点 : (单向通信)</h6><p>​     1.http协议是一种无状态协议。（每次访问服务器时，没有办法识别身份）<br>​     2.短连接协议（每次通信完毕就断开了）<br>​     3.http协议是一种单向通信协议（只能由客户的端主动向服务器发出请求，然后接受响应，服务器端不能主动给客户端发送消息）<br>​     4.每次发起HTTP请求时，都会将浏览器缓存的cookie发送给服务器端。<br>​     5.每次只能处理一个请求（两张图片，就是两个请求）<br>​     6.简单、快捷、高效</p>
 <p>=====================================================================================<br>电脑上的二维码图片 : 识别结果  = &gt; <a href="https://login.weixin.qq.com/l/IbliFrl0WQ==" target="_blank" rel="noopener">https://login.weixin.qq.com/l/IbliFrl0WQ==</a></p>
 <p>打开手机微信扫描后就会先解析二维码 ,然后进行二维码地址的访问 =&gt;  <a href="https://login.weixin.qq.com/l/IbliFrl0WQ==" target="_blank" rel="noopener">https://login.weixin.qq.com/l/IbliFrl0WQ==</a></p>
@@ -167,282 +152,166 @@
 <h5 id="在线智能机器人对话"><a href="#在线智能机器人对话" class="headerlink" title="在线智能机器人对话"></a>在线智能机器人对话</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot;</span><br><span class="line">          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;</span><br><span class="line">    &lt;title&gt;在线智能对话&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        body&#123;</span><br><span class="line">            font-family:&quot;微软雅黑&quot;;</span><br><span class="line">            font-size: 12px;</span><br><span class="line">        &#125;</span><br><span class="line">        .container&#123;</span><br><span class="line">            position: relative;</span><br><span class="line">            width: 60%;</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            padding: 15px 0;</span><br><span class="line">            border: 1px solid #ccc;</span><br><span class="line">            border-radius: 5px;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">            height: 90vh;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        #chat-box&#123;</span><br><span class="line">            height: 90%;</span><br><span class="line">            overflow: auto;</span><br><span class="line">            padding-bottom:20px;</span><br><span class="line">        &#125;</span><br><span class="line">        .chat&#123;</span><br><span class="line">            position: relative;</span><br><span class="line">            padding: 15px;</span><br><span class="line">            width: 100%;</span><br><span class="line">            max-width: 60%;</span><br><span class="line">            margin: 5px 0;</span><br><span class="line">            border-radius: 5px;</span><br><span class="line">        &#125;</span><br><span class="line">        .chat.other&#123;</span><br><span class="line">            float: left;</span><br><span class="line">            background:#2aabd2;</span><br><span class="line">        &#125;</span><br><span class="line">        .chat.self&#123;</span><br><span class="line">            float: right;</span><br><span class="line">            background: #48ca09;</span><br><span class="line">        &#125;</span><br><span class="line">        .chat.system&#123;</span><br><span class="line">            width: auto;</span><br><span class="line">            max-width: 80%;</span><br><span class="line">            color: #999;</span><br><span class="line">            margin: 0px auto;</span><br><span class="line">            background: none;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .chat.system span&#123;</span><br><span class="line">            background: #f1f1f1;</span><br><span class="line">            /*display: inline-block;*/</span><br><span class="line">            padding: 4px 8px;</span><br><span class="line">            border-radius: 5px;</span><br><span class="line">        &#125;</span><br><span class="line">        .chat .date&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: 3px;</span><br><span class="line">            left:0px;</span><br><span class="line">            color: #fff;</span><br><span class="line">            text-align: left;</span><br><span class="line">            padding-left: 20px;</span><br><span class="line">            font-size: 12px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .chat .info&#123;</span><br><span class="line">            padding-top: 10px;</span><br><span class="line">            color: #333;</span><br><span class="line">        &#125;</span><br><span class="line">        .msg-box:after&#123;</span><br><span class="line">            content: &quot;&quot;;</span><br><span class="line">            display: block;</span><br><span class="line">            clear: both;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #send-box&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            bottom: 0;</span><br><span class="line">            padding: 5px 10px;</span><br><span class="line">            width: 100%;</span><br><span class="line">            background: #2aabd2;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        #send-box input&#123;</span><br><span class="line">            padding: 5px 8px;</span><br><span class="line">            border: 1px solid #ccc;</span><br><span class="line">            width: 50%;</span><br><span class="line">        &#125;</span><br><span class="line">        #send-box button&#123;</span><br><span class="line">            border: 0;</span><br><span class="line">            padding: 6px 10px;</span><br><span class="line">            cursor: pointer;</span><br><span class="line">        &#125;</span><br><span class="line">        #send-box button:hover&#123;</span><br><span class="line">            background: red;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div id=&quot;chat-box&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div id=&quot;send-box&quot;&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; id=&quot;msg&quot;&gt;</span><br><span class="line">            &lt;button class=&quot;send&quot;&gt;发送&lt;/button&gt;</span><br><span class="line">            &lt;button class=&quot;close&quot;&gt;断开&lt;/button&gt;</span><br><span class="line">            &lt;button class=&quot;reconnect&quot;&gt;重新连接&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;js/jquery-v1.12.0.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/moment.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        /**</span><br><span class="line">         * 每次发完消息, 滚动最后一条记录 : 滚动距离 = 最后一条消息 距离聊天窗口容器的顶部距离(包括滚动距离)</span><br><span class="line">         * */</span><br><span class="line">        var ws = null;// ws 实例对象</span><br><span class="line"></span><br><span class="line">        //定义一个连接方法</span><br><span class="line">        function connect()&#123;</span><br><span class="line">            ws = new WebSocket(&quot;ws://172.16.4.1:8000&quot;);</span><br><span class="line">            //绑定一些事件</span><br><span class="line">            ws.onopen = function () &#123;</span><br><span class="line">                writeSystemMessage(&quot;已经与服务器建立连接...&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            ws.onclose = function () &#123;</span><br><span class="line">                writeSystemMessage(&quot;您已经与服务器断开连接...&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ws.onmessage = function (e) &#123;</span><br><span class="line">                writeChatMessage(e.data,&quot;other&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            ws.onerror = function () &#123;</span><br><span class="line">                writeSystemMessage(&quot;网络异常,请重新连接...&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //定义一个生成系统消息的方法</span><br><span class="line">        function writeSystemMessage(msg)&#123;</span><br><span class="line">            var str = $(&quot;&lt;div class=&apos;msg-box&apos;&gt;&lt;div class=&apos;chat system&apos;&gt;&lt;span&gt;&quot;+moment(new Date()).format(&apos;YYYY-MM-DD HH:mm:ss&apos;)+&quot; &quot; + msg+&quot;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&quot;);</span><br><span class="line">            $(&quot;#chat-box&quot;).append(str);</span><br><span class="line">            scrollLastMessage();</span><br><span class="line">            // console.log(msg);</span><br><span class="line">        &#125;</span><br><span class="line">        //定义一个写入聊天信息的方法</span><br><span class="line">        function writeChatMessage(msg,role)&#123; // msg 消息 , role 发送消息角色</span><br><span class="line">            var str = $(&quot;&lt;div class=&apos;msg-box&apos;&gt;&lt;div class=&apos;chat &quot;+role+&quot;&apos;&gt;&lt;div class=&apos;date&apos;&gt;&quot;+moment(new Date()).format(&apos;YYYY-MM-DD HH:mm:ss&apos;)+&quot;&lt;/div&gt;&lt;div class=&apos;info&apos;&gt;&quot;+msg+&quot;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&quot;);</span><br><span class="line">            $(&quot;#chat-box&quot;).append(str);</span><br><span class="line">            scrollLastMessage();</span><br><span class="line">        &#125;</span><br><span class="line">        //定义一个滚动到最后一条消息位置</span><br><span class="line">        function scrollLastMessage()&#123;</span><br><span class="line">            //先获取最后一条消息距离网页顶部的距离</span><br><span class="line">            var topH = $(&quot;.msg-box:last&quot;)[0].offsetTop;</span><br><span class="line">            //给消息盒子设置滚动距离</span><br><span class="line">            $(&quot;#chat-box&quot;).scrollTop(topH);</span><br><span class="line">        &#125;</span><br><span class="line">        //进入聊天页面 ,自动连接</span><br><span class="line">        connect();</span><br><span class="line">        //绑定发送消息事件</span><br><span class="line">        $(&quot;.send&quot;).click(function()&#123;</span><br><span class="line">            if(ws.readyState==1)&#123;</span><br><span class="line">                var msg = $(&quot;#msg&quot;).val();</span><br><span class="line">                writeChatMessage(msg,&quot;self&quot;);</span><br><span class="line">                //向服务器发送消息</span><br><span class="line">                ws.send(msg);</span><br><span class="line">                $(&quot;#msg&quot;).val(&quot;&quot;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                writeSystemMessage(&quot;网络异常,请尝试重新连接...&quot;)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">        //绑定断开连接</span><br><span class="line">        $(&quot;.close&quot;).click(function()&#123;</span><br><span class="line">            if(ws.readyState!=3)&#123;</span><br><span class="line">                ws.close();//关闭连接</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        //重新连接</span><br><span class="line">        $(&quot;.reconnect&quot;).click(connect);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 
-
-        
-        <div class="post-announce">
-            Thank you for reading, this article belongs to
-            <a href="http://yoursite.com">永恒的金色年华</a>
-            copyright, if reproduced, please indicate the source：永恒的金色年华（<a href="http://yoursite.com/2019/11/11/websocket通信基础/">http://yoursite.com/2019/11/11/websocket通信基础/</a>）
-        </div>
-        
-
-        <div class="post__prevs">
-            <div class="post__prev">
-                
-                <a href="/2019/11/04/css3弹性盒子布局/" title="css3弹性盒子布局"><i class="iconfont icon-prev"></i>css3弹性盒子布局</a>
-                
-            </div>
-            <div class="post__prev post__prev--right">
-                
-                <a href="/2019/11/11/WebWorker处理大量计算js脚本/" title="Web Worker的原理">Web Worker的原理<i class="iconfont icon-next"></i></a>
-                
-            </div>
-        </div>
-    </div>
-</article>
-
-        
-        
-    </div>
-
-    <aside class="page__sidebar">
-    <!--  -->
-
-    <form id="page-search-from" class="page__search-from" action="/search/">
-        <label class="search-form__item">
-            <input class="input" type="text" name="search" placeholder="Search...">
-            <i class="iconfont icon-search"></i>
-        </label>
-    </form>
-
-    
-        <div class="sidebar__block">
-            <h3 class="block__title">Introduction</h3>
-            <p class="block__text">哈哈哈嗝~</p>
-        </div>
-    
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Categories</h3>
-        
-    </div>
-    
-    <div class="sidebar__block">
-        <h3 class="block__title">Latest Post</h3>
-        
-        <ul class="block-list latest-post-list">
+            <hr>
+          </div>
+          <br>
+          <div>
             
-                    <li class="latest-post-item">
-                        <a href="/2019/12/06/12月06日14道面试题及其答案/" title="12月06日14道面试题及其答案">
-                            <div class="item__cover">
-                                <img src="undefined" alt="12月06日14道面试题及其答案">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">12月06日14道面试题及其答案</h3>
-                                <span class="item__text">2019-12-06</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2019/12/05/js中的跨域问题解决/" title="js中的跨域及其解决的办法">
-                            <div class="item__cover">
-                                <img src="undefined" alt="js中的跨域及其解决的办法">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">js中的跨域及其解决的办法</h3>
-                                <span class="item__text">2019-12-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2019/11/16/HTML5+css3/" title="HTML5+css3">
-                            <div class="item__cover">
-                                <img src="undefined" alt="HTML5+css3">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">HTML5+css3</h3>
-                                <span class="item__text">2019-11-16</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2019/11/16/BFC块格式化上下文/" title="BFC块格式化上下文">
-                            <div class="item__cover">
-                                <img src="undefined" alt="BFC块格式化上下文">
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">BFC块格式化上下文</h3>
-                                <span class="item__text">2019-11-16</span>
-                            </div>
-                        </a>
-                    </li>
-                
-        </ul>
-    
-    </div>
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Tags</h3>
-        
-        <ul class="block-list tag-list clearfix">
-            
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/BFC/">BFC</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/H5-CSS3/">H5+CSS3</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/OOP面向对象思想/">OOP面向对象思想</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/Web-Worker/">Web Worker</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/ajax/">ajax</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/call和apply/">call和apply</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/css3/">css3</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/hexo搭建博客/">hexo搭建博客</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/html4/">html4</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/jQuery/">jQuery</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/javascript/">javascript</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/javascript跨域/">javascript跨域</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/js面试题/">js面试题</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/photoshop/">photoshop</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/websocket/">websocket</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/函数柯里化/">函数柯里化</a>
-                    </li>  
-                
-        </ul>
-    
-    </div>
-
-    <!-- <div class="sidebar__block">
-        <h3 class="block__title">Friend Links</h3>
-        <ul class="block-list">
-            
-        </ul>
-    </div> -->
-</aside>
-</main>
-
-
-        
-            <!-- 页脚 -->
-<footer class="page__footer">
-    <section class="footer__top">
-        <div class="page__container footer__container">
-            
-            <div class="footer-top__item footer-top__item--2">
-                <h3 class="item__title">About</h3>
-                <div class="item__content">
-                    <p class="item__text"></p>
-                    <ul class="footer__contact-info">
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-address"></i>
-                            <span></span>
-                        </li>
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-email2"></i>
-                            <span></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            
-            
-            
-            
-            
-        </div>
-    </section>
-    <section class="footer__bottom">
-        <div class="page__container footer__container">
-            <p class="footer__copyright">©
-                <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank">Skapp</a> 2017 powered by
-                <a href="http://hexo.io/" target="_blank">Hexo</a>, made by 
-                <a href="https://github.com/Mrminfive" target="_blank">minfive</a>.
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/websocket">websocket</a>
+              
             </p>
-            <ul class="footer__social-network clearfix">
-                
-            </ul>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
         </div>
-    </section>
-</footer>
-        
-
-        
-            <!-- 返回顶部 -->
-<div id="back-top" class="back-top back-top--hidden js-hidden">
-    <i class="iconfont icon-top"></i>
-</div>
-        
+      </div>
     </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
 
-    <!-- build:js /js/common.js -->
-        <script type="text/javascript" src="js/common/utils.js"></script>
-        <script type="text/javascript" src="js/common/pack.js"></script>
-        <script type="text/javascript" src="js/common/animation.js"></script>
-        <script type="text/javascript" src="js/layout/loading.js"></script>
-        <script type="text/javascript" src="js/layout/header.js"></script>
-        <script type="text/javascript" src="js/layout/back-top.js"></script>
-        <script type="text/javascript" src="js/layout/post.js"></script>
-    <!-- endbuild -->
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+  </div>
+</div>
 
     
-    <script src="/js/page/post.js"></script>
+  </main>
 
+  
+    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
+      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
+    </a>
+  
 
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
+    <i class="iconfont icon-love"></i>
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
+    <br>
     
-    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="/lib/jquery/jquery.min.js" ></script>
+<script src="/lib/popper/popper.min.js" ></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
+<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
+<script src="/js/main.js" ></script>
+
+  <script src="/js/lazyload.js" ></script>
+
+
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
+
+  <script src="/lib/prettify/prettify.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      $('pre').addClass('prettyprint linenums');
+      prettyPrint();
+    })
+  </script>
+
+
+  <script src="/lib/typed/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "websocket基础&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+  <script src="/lib/anchor/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "false",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
 
 
 
-    <!-- 不蒜子统计 -->
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-     
-
-
-
-
+  <script src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      getSearchFile(path);
+      this.onclick = null
+    }
+  </script>
 
 
 
+  <script>
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
+      $("#background").css("background-attachment", "scroll");
+    }
+  </script>
 
 </body>
 </html>
