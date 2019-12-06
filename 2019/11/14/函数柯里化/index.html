@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+        <title>函数柯里化及其使用到的案例 | </title>
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Luking Xun">
+<meta name="designer" content="minfive">
+<meta name="keywords" content="噗哈哈哈">
+<meta name="description" content="哈哈哈嗝~">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="all">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/14/函数柯里化/index.html">
+
+<link rel="icon" type="image/png" href="undefined" sizes="32x32">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Prefetch -->
+
+
+
+
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="/scss/base/index.css">
+
+<!-- RSS -->
+<link rel="alternate" href="/atom.xml" title="永恒的金色年华">
+
+<!-- 统计 -->
+<!-- 百度统计 -->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+    
+    <link rel="stylesheet" href="/scss/views/page/post.css">
+
+</head>
+<body ontouchstart>
+    
+        <!-- loading 页面 -->
+<div id="page-loading" class="page page-loading" style="background-image: url('undefined')"></div>
+    
+
+    <div id="page" class="page js-hidden">
+        
+    <!-- 页头 -->
+<header class="page__small-header page__header--small">
+    <nav class="page__navbar">
+        <div class="page__container navbar-container">
+            <a class="page__logo" href="/" title="永恒的金色年华" alt="永恒的金色年华">
+                <img src="undefined" alt="永恒的金色年华">
+            </a>
+
+            <nav class="page__nav">
+                <ul class="nav__list clearfix">
+                    
+                </ul>
+            </nav>
+
+            <button class="page__menu-btn" type="button">
+                <i class="iconfont icon-menu"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+        
+    <main class="page__container page__main">
+    <div class="page__content">
+        <article class="page__post">
+    <div class="post__cover">
+        <img src="undefined" alt="函数柯里化及其使用到的案例">
+    </div>
+
+    <header class="post__info">
+        <h1 class="post__title">函数柯里化及其使用到的案例</h1>
+
+        <div class="post__mark">
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-write"></i>
+                <ul class="mark__list clearfix">
+                    
+                        <li class="mark__item">
+                            <a href="/">undefined</a>
+                        </li>
+                    
+                </ul>
+            </div>
+            
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-time"></i>
+                <ul class="mark__list clearfix">
+                    <li class="mark__item"><span>2019-11-14</span></li>
+                </ul>
+            </div>
+
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-tab"></i>
+                <ul class="mark__list clearfix">
+                    
+                        <li class="mark__item">
+                            <a href="/tags/函数柯里化/">函数柯里化</a>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            
+        </div>
+    </header>
+
+    <div class="post__content">
+        <h1 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span></span></span><br><span class="line"><span class="tag">          <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    /**</span><br><span class="line">     *  定义:</span><br><span class="line">     *  在计算机科学中，柯里化（Currying）是把接受多个参数的函数变换成接受一个单一参数(最初函数的第一个参数)的函数，</span><br><span class="line">     *  并且返回接受余下的参数且返回结果的新函数的技术。</span><br><span class="line">     *</span><br><span class="line">     *  好处:</span><br><span class="line">     *      1.实现参数单一传入 实现参数复用</span><br><span class="line">     *      2.缓存函数执行的参数 ,减少重复计算 = &gt; 延迟计算 (延迟处理某些任务,因考虑到后面还有其他的任务)</span><br><span class="line">     *</span><br><span class="line">     *  使用场景:</span><br><span class="line">     *      1.比如说再一些需要动态传参的场景下使用,就是函数需要执行的参数可能还不能确定</span><br><span class="line">     *      2.多次操作任务, 可以先把前面的任务暂存 ,等到最后一次执行时,先判断之前的任务是否还具有执行的意义,如果没有意义就不执行</span><br><span class="line">     *      3.浏览器的兼容性的检测, 按照常规,会写一个兼容性处理方法,(不使用柯理化,需要每次调用都要检测一次) ,柯理化后就可以优化整个流程,每次页面加载只检测一次</span><br><span class="line">     *  调用方式:  curry(a)(b)(c)(d)</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//封装一个加法计算的函数</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// function add(a,b)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     return a+b;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// //原来的想法</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// var num1 = add(10,20);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// var num2 = add(10,30);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// //定义一个柯理化函数 ((柯理化))</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// function curryAdd(a)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     return function(b)&#123; // 闭包</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         return add(a,b);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// var first = curryAdd(10);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     console.log(first(20));  // =&gt;  30</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// // console.log(first);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// //使用柯理化之后</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// var num3 = first(20);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// var num4 = first(30);</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//实现一个可以计算多个数字的之和的方法</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// function add()&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     // console.log(arguments);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     //为了避免计算错误 ,判断是否带有参数</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     if(!arguments.length)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         return 0;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     var args = [].slice.call(arguments); //为了借数组的方法</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     return args.reduce(function (item,total) 			&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         return total+=item;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     &#125;)</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     // console.log(args);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     //arguments 伪数组 ,就是传入方法中的参数的集合</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     // console.log(arguments.length);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// var num = add(10,20,50,3,50,60,40,50,30);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// var num = add();</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// function fn()&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">//柯理化后</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// function curryAdd(fn)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     var nums = [];//用于缓存调用时存储进来的参数</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     return function fn(a)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         if(arguments.length)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//             var args = [].slice.call(arguments);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//             // nums.push(a);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//                 nums = nums.concat(args);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//             console.log(nums);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//             return fn;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         //如果执行该方法时,已经不带参数 ,则直接计算所有存储的参数 ,一次计算(合并计算)</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         console.log("不带参数时,表示该计算结果了!");</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         return add.apply(null,nums);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// var ss = curryAdd(); // ss  == fn</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     ss(10);  //可能后面还有数字需要一起计算 ,所以此时的函数暂时先不计算 ,可以把参数暂时缓存nums中</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     ss(20)(10,50)(50,10);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     console.log(ss());</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">   <span class="comment">//缓存功能</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//传统做法: 不足就是 ,每次通过addEvent() 做兼容性的绑定时间 ,都会把内部的判断逻辑执行一次 ,如果需要绑定三个事件 ,就需要执行三次 兼容性检测</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// function addEvent(type,el,fn,capture = false)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     if(window.addEventListener)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         el.addEventListener(type,fn,capture);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     &#125;else if(window.addachEvent)&#123;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//         el.addachEvent("on" + type,fn);</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">//     &#125;</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// &#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">//柯理化之后的 : 使用addEvent 函数做兼容绑定事件 ,只需要检测一次兼容性,后面就直接使用缓存的结果去绑定事件 ,如果绑定三个事件,其实只检测一次兼容性</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> addEvent = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span>(<span class="built_in">window</span>.addEventListener)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">type,el,fn,capture</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> capture = capture || <span class="literal">false</span>;</span></span><br><span class="line">                el.addEventListener(type,fn,capture);</span><br><span class="line">            &#125;</span><br><span class="line"><span class="javascript">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.attachEvent)&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">type,el,fn</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                el.attachEvent(<span class="string">"on"</span> + type,fn);</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(addEvent)</span></span><br><span class="line"><span class="javascript">    <span class="comment">// addEvent("click",document.getElementById("box"));</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// addEvent("click",document.getElementById("box"));</span></span></span><br><span class="line"><span class="javascript">    <span class="comment">// addEvent("click",document.getElementById("box"));</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数柯里化复习版"><a href="#函数柯里化复习版" class="headerlink" title="函数柯里化复习版"></a>函数柯里化复习版</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="comment">//首先定义一个相加的方法方便下面调用</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// function add(a,b)&#123;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//     return a+b;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// &#125;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// // 一个最简单的例子</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">// function curryAdd(a)&#123;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//     return function(b)&#123;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//         return add(a,b);</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">//     &#125;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// &#125;</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// // console.log(curryAdd(10));</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// var first = curryAdd(10);//这个10代表a是第一层</span></span></span><br><span class="line"><span class="javascript">        <span class="comment">// console.log(first(50));//50已经是第二次调用就是第二层</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">//实现多个数字相加(利用到数组的方法reduce)，但是没使用函数柯里化每次都会出结果，相当于计算重复了多次</span></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);<span class="comment">//arguments是伪数组，浏览器自带</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span>( !<span class="built_in">arguments</span>.length )&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> <span class="number">0</span>;</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>);<span class="comment">//arguments是伪数组没有数组的方法，利用call方法借用数组的slice方法</span></span></span><br><span class="line">            </span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> args.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">item,total</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> total +=item;</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="comment">// console.log(add(10,50,80));</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">        <span class="comment">//然后利用到函数柯里化来实现多个数字相加</span></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">curryadd</span>(<span class="params">fn</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> nums = [];<span class="comment">//定义一个空的数组来存储写入需要相加的数字</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a</span>)</span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>( <span class="built_in">arguments</span>.length )&#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>);</span></span><br><span class="line"><span class="javascript">                    <span class="comment">// nums.push(a);</span></span></span><br><span class="line"><span class="javascript">                    nums = nums.concat(args);<span class="comment">//因为nums是外面一层变量加了return可以返回出去，所以把里面的数字合并给nums</span></span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(nums);</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span> fn;</span></span><br><span class="line">                &#125;</span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> add.apply(<span class="literal">null</span>,nums)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> adds = curryadd();</span></span><br><span class="line"><span class="javascript">        adds(<span class="number">10</span>,<span class="number">10</span>)(<span class="number">10</span>);<span class="comment">//柯里化把需要计算的数字先存好</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(adds());<span class="comment">//最后一次计算，提高性能</span></span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+        
+        <div class="post-announce">
+            Thank you for reading, this article belongs to
+            <a href="http://yoursite.com">永恒的金色年华</a>
+            copyright, if reproduced, please indicate the source：永恒的金色年华（<a href="http://yoursite.com/2019/11/14/函数柯里化/">http://yoursite.com/2019/11/14/函数柯里化/</a>）
+        </div>
+        
+
+        <div class="post__prevs">
+            <div class="post__prev">
+                
+                <a href="/2019/11/14/对象的call方法和数组的apply方法/" title="对象的call方法和数组的apply方法"><i class="iconfont icon-prev"></i>对象的call方法和数组的apply方法</a>
+                
+            </div>
+            <div class="post__prev post__prev--right">
+                
+                <a href="/2019/11/16/BFC块格式化上下文/" title="BFC块格式化上下文">BFC块格式化上下文<i class="iconfont icon-next"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+        
+        
+    </div>
+
+    <aside class="page__sidebar">
+    <!--  -->
+
+    <form id="page-search-from" class="page__search-from" action="/search/">
+        <label class="search-form__item">
+            <input class="input" type="text" name="search" placeholder="Search...">
+            <i class="iconfont icon-search"></i>
+        </label>
+    </form>
+
+    
+        <div class="sidebar__block">
+            <h3 class="block__title">Introduction</h3>
+            <p class="block__text">哈哈哈嗝~</p>
+        </div>
+    
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Categories</h3>
+        
+    </div>
+    
+    <div class="sidebar__block">
+        <h3 class="block__title">Latest Post</h3>
+        
+        <ul class="block-list latest-post-list">
+            
+                    <li class="latest-post-item">
+                        <a href="/2019/12/06/12月06日14道面试题及其答案/" title="12月06日14道面试题及其答案">
+                            <div class="item__cover">
+                                <img src="undefined" alt="12月06日14道面试题及其答案">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">12月06日14道面试题及其答案</h3>
+                                <span class="item__text">2019-12-06</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/2019/12/05/js中的跨域问题解决/" title="js中的跨域及其解决的办法">
+                            <div class="item__cover">
+                                <img src="undefined" alt="js中的跨域及其解决的办法">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">js中的跨域及其解决的办法</h3>
+                                <span class="item__text">2019-12-05</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/2019/11/16/HTML5+css3/" title="HTML5+css3">
+                            <div class="item__cover">
+                                <img src="undefined" alt="HTML5+css3">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">HTML5+css3</h3>
+                                <span class="item__text">2019-11-16</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/2019/11/16/BFC块格式化上下文/" title="BFC块格式化上下文">
+                            <div class="item__cover">
+                                <img src="undefined" alt="BFC块格式化上下文">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">BFC块格式化上下文</h3>
+                                <span class="item__text">2019-11-16</span>
+                            </div>
+                        </a>
+                    </li>
+                
+        </ul>
+    
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Tags</h3>
+        
+        <ul class="block-list tag-list clearfix">
+            
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/BFC/">BFC</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/H5-CSS3/">H5+CSS3</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/OOP面向对象思想/">OOP面向对象思想</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Web-Worker/">Web Worker</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/ajax/">ajax</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/call和apply/">call和apply</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/css3/">css3</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/hexo搭建博客/">hexo搭建博客</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/html4/">html4</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/jQuery/">jQuery</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/javascript/">javascript</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/javascript跨域/">javascript跨域</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/js面试题/">js面试题</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/photoshop/">photoshop</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/websocket/">websocket</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/函数柯里化/">函数柯里化</a>
+                    </li>  
+                
+        </ul>
+    
+    </div>
+
+    <!-- <div class="sidebar__block">
+        <h3 class="block__title">Friend Links</h3>
+        <ul class="block-list">
+            
+        </ul>
+    </div> -->
+</aside>
+</main>
+
+
+        
+            <!-- 页脚 -->
+<footer class="page__footer">
+    <section class="footer__top">
+        <div class="page__container footer__container">
+            
+            <div class="footer-top__item footer-top__item--2">
+                <h3 class="item__title">About</h3>
+                <div class="item__content">
+                    <p class="item__text"></p>
+                    <ul class="footer__contact-info">
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-address"></i>
+                            <span></span>
+                        </li>
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-email2"></i>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            
+            
+            
+            
+        </div>
+    </section>
+    <section class="footer__bottom">
+        <div class="page__container footer__container">
+            <p class="footer__copyright">©
+                <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank">Skapp</a> 2017 powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>, made by 
+                <a href="https://github.com/Mrminfive" target="_blank">minfive</a>.
+            </p>
+            <ul class="footer__social-network clearfix">
+                
+            </ul>
+        </div>
+    </section>
+</footer>
+        
+
+        
+            <!-- 返回顶部 -->
+<div id="back-top" class="back-top back-top--hidden js-hidden">
+    <i class="iconfont icon-top"></i>
+</div>
+        
+    </div>
+
+    <!-- build:js /js/common.js -->
+        <script type="text/javascript" src="js/common/utils.js"></script>
+        <script type="text/javascript" src="js/common/pack.js"></script>
+        <script type="text/javascript" src="js/common/animation.js"></script>
+        <script type="text/javascript" src="js/layout/loading.js"></script>
+        <script type="text/javascript" src="js/layout/header.js"></script>
+        <script type="text/javascript" src="js/layout/back-top.js"></script>
+        <script type="text/javascript" src="js/layout/post.js"></script>
+    <!-- endbuild -->
+
+    
+    <script src="/js/page/post.js"></script>
+
+
+    
+    
+
+
+
+    <!-- 不蒜子统计 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+     
+
+
+
+
+
+
+
+
+</body>
+</html>

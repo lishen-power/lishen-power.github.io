@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+        <title>css3弹性盒子布局 | </title>
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="Luking Xun">
+<meta name="designer" content="minfive">
+<meta name="keywords" content="噗哈哈哈">
+<meta name="description" content="哈哈哈嗝~">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="robots" content="all">
+
+<link rel="canonical" href="http://yoursite.com/2019/11/04/css3弹性盒子布局/index.html">
+
+<link rel="icon" type="image/png" href="undefined" sizes="32x32">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Prefetch -->
+
+
+
+
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="/scss/base/index.css">
+
+<!-- RSS -->
+<link rel="alternate" href="/atom.xml" title="永恒的金色年华">
+
+<!-- 统计 -->
+<!-- 百度统计 -->
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+    
+    <link rel="stylesheet" href="/scss/views/page/post.css">
+
+</head>
+<body ontouchstart>
+    
+        <!-- loading 页面 -->
+<div id="page-loading" class="page page-loading" style="background-image: url('undefined')"></div>
+    
+
+    <div id="page" class="page js-hidden">
+        
+    <!-- 页头 -->
+<header class="page__small-header page__header--small">
+    <nav class="page__navbar">
+        <div class="page__container navbar-container">
+            <a class="page__logo" href="/" title="永恒的金色年华" alt="永恒的金色年华">
+                <img src="undefined" alt="永恒的金色年华">
+            </a>
+
+            <nav class="page__nav">
+                <ul class="nav__list clearfix">
+                    
+                </ul>
+            </nav>
+
+            <button class="page__menu-btn" type="button">
+                <i class="iconfont icon-menu"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
+
+        
+    <main class="page__container page__main">
+    <div class="page__content">
+        <article class="page__post">
+    <div class="post__cover">
+        <img src="undefined" alt="css3弹性盒子布局">
+    </div>
+
+    <header class="post__info">
+        <h1 class="post__title">css3弹性盒子布局</h1>
+
+        <div class="post__mark">
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-write"></i>
+                <ul class="mark__list clearfix">
+                    
+                        <li class="mark__item">
+                            <a href="/">undefined</a>
+                        </li>
+                    
+                </ul>
+            </div>
+            
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-time"></i>
+                <ul class="mark__list clearfix">
+                    <li class="mark__item"><span>2019-11-04</span></li>
+                </ul>
+            </div>
+
+            <div class="mark__block">
+                <i class="mark__icon iconfont icon-tab"></i>
+                <ul class="mark__list clearfix">
+                    
+                        <li class="mark__item">
+                            <a href="/tags/css3/">Css3</a>
+                        </li>
+                    
+                </ul>
+            </div>
+
+            
+        </div>
+    </header>
+
+    <div class="post__content">
+        <h1 id="CSS3弹性盒布局方式"><a href="#CSS3弹性盒布局方式" class="headerlink" title="CSS3弹性盒布局方式"></a>CSS3弹性盒布局方式</h1><p><a href="https://www.jianshu.com/u/31bb592f78d5" target="_blank" rel="noopener"><img src="https://upload.jianshu.io/users/upload_avatars/2326131/070da65f-dbd3-4e35-bb4b-431474109ad0.jpg?imageMogr2/auto-orient/strip%7CimageView2/1/w/96/h/96/format/webp" alt="img"></a></p>
+<p><a href="https://www.jianshu.com/u/31bb592f78d5" target="_blank" rel="noopener">风起云涌Hal</a>关注</p>
+<p>12018.01.09 17:26:02字数 866阅读 78,971</p>
+<h1 id="一、CSS3弹性盒子"><a href="#一、CSS3弹性盒子" class="headerlink" title="一、CSS3弹性盒子"></a>一、CSS3弹性盒子</h1><p>弹性盒子是CSS3的一种新布局模式。</p>
+<p>CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。</p>
+<p>引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。</p>
+<h1 id="二、浏览器支持"><a href="#二、浏览器支持" class="headerlink" title="二、浏览器支持"></a>二、浏览器支持</h1><p>表格中的数字表示支持该属性的第一个浏览器的版本号。</p>
+<p>紧跟在数字后面的 -webkit- 或 -moz- 为指定浏览器的前缀。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th><img src="https://upload-images.jianshu.io/upload_images/2326131-0c246ca699156c04.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/28/format/webp" alt="img"></th>
+<th><img src="https://upload-images.jianshu.io/upload_images/2326131-db41f7b1409e5753.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/28/format/webp" alt="img"></th>
+<th><img src="https://upload-images.jianshu.io/upload_images/2326131-33ee6d0fd348cf55.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/31/format/webp" alt="img"></th>
+<th><img src="https://upload-images.jianshu.io/upload_images/2326131-6b35288a389e7c16.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/28/format/webp" alt="img"></th>
+<th><img src="https://upload-images.jianshu.io/upload_images/2326131-ac010b20c89f1f73.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/31/format/webp" alt="img"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Basic support (single-line flexbox)</td>
+<td>29.0 21.0 -webkit-</td>
+<td>11.0</td>
+<td>22.0 18.0 -moz-</td>
+<td>6.1 -webkit-</td>
+<td>12.1 -webkit-</td>
+</tr>
+<tr>
+<td>Multi-line flexbox</td>
+<td>29.0 21.0 -webkit-</td>
+<td>11.0</td>
+<td>28.0</td>
+<td>6.1 -webkit-</td>
+<td>17.0 15.0 -webkit- 12.1</td>
+</tr>
+</tbody></table>
+<h1 id="三、CSS3-弹性盒子内容"><a href="#三、CSS3-弹性盒子内容" class="headerlink" title="三、CSS3 弹性盒子内容"></a>三、CSS3 弹性盒子内容</h1><p>弹性盒子由弹性容器(Flex container)和弹性子元素(Flex item)组成。</p>
+<p>弹性容器通过设置 display 属性的值为 flex 或 inline-flex将其定义为弹性容器。</p>
+<p>弹性容器内包含了一个或多个弹性子元素。</p>
+<p><strong>注意：</strong> 弹性容器外及弹性子元素内是正常渲染的。弹性盒子只定义了弹性子元素如何在弹性容器内布局。</p>
+<p>弹性子元素通常在弹性盒子内一行显示。默认情况每个容器只有一行。</p>
+<p>以下元素展示了弹性子元素在一行内显示，从左到右:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>FLEX<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">        .flex-container &#123;</span><br><span class="line">            display: flex;</span><br><span class="line">            flex-direction: row;</span><br><span class="line">            flex-wrap: wrap;</span><br><span class="line">            width: 1200px;</span><br><span class="line">            height: 640px;</span><br><span class="line">            background-color: lightsteelblue;</span><br><span class="line">        &#125;</span><br><span class="line">        .flex-container .flex-item &#123;</span><br><span class="line">            width: 320px;</span><br><span class="line">            height: 240px;</span><br><span class="line">            margin: 10px;</span><br><span class="line">            background-color:lightsalmon;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex-container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-29eeb4af8354ed8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
+<h1 id="四、CSS3-弹性盒子常用属性"><a href="#四、CSS3-弹性盒子常用属性" class="headerlink" title="四、CSS3 弹性盒子常用属性"></a>四、CSS3 弹性盒子常用属性</h1><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-direction</td>
+<td>指定弹性容器中子元素排列方式</td>
+</tr>
+<tr>
+<td>flex-wrap</td>
+<td>设置弹性盒子的子元素超出父容器时是否换行</td>
+</tr>
+<tr>
+<td>flex-flow</td>
+<td>flex-direction 和 flex-wrap 的简写</td>
+</tr>
+<tr>
+<td>align-items</td>
+<td>设置弹性盒子元素在侧轴（纵轴）方向上的对齐方式</td>
+</tr>
+<tr>
+<td>align-content</td>
+<td>修改 flex-wrap 属性的行为，类似 align-items, 但不是设置子元素对齐，而是设置行对齐</td>
+</tr>
+<tr>
+<td>justify-content</td>
+<td>设置弹性盒子元素在主轴（横轴）方向上的对齐方式</td>
+</tr>
+</tbody></table>
+<h2 id="1-flex-direction-属性"><a href="#1-flex-direction-属性" class="headerlink" title="1. flex-direction 属性"></a>1. flex-direction 属性</h2><p>决定项目的方向。</p>
+<p><strong>注意：</strong>如果元素不是弹性盒对象的元素，则 flex-direction 属性不起作用。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123; <span class="attribute">flex-direction</span>: row | row-reverse | column | column-reverse; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-bbd36877856086ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/796/format/webp" alt="img"></p>
+<p><strong>属性值</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>row</td>
+<td>默认值。元素将水平显示，正如一个行一样。</td>
+</tr>
+<tr>
+<td>row-reverse</td>
+<td>与 row 相同，但是以相反的顺序。</td>
+</tr>
+<tr>
+<td>column</td>
+<td>元素将垂直显示，正如一个列一样。</td>
+</tr>
+<tr>
+<td>column-reverse</td>
+<td>与 column 相同，但是以相反的顺序。</td>
+</tr>
+</tbody></table>
+<h2 id="2-flex-wrap-属性"><a href="#2-flex-wrap-属性" class="headerlink" title="2. flex-wrap 属性"></a>2. flex-wrap 属性</h2><p>flex-wrap 属性规定flex容器是单行或者多行，同时横轴的方向决定了新行堆叠的方向。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nowrap</td>
+<td>默认值。规定元素不拆行或不拆列。</td>
+</tr>
+<tr>
+<td>wrap</td>
+<td>规定元素在必要的时候拆行或拆列。</td>
+</tr>
+<tr>
+<td>wrap-reverse</td>
+<td>规定元素在必要的时候拆行或拆列，但是以相反的顺序。</td>
+</tr>
+</tbody></table>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123; <span class="attribute">flex-wrap</span>: nowrap | wrap | wrap-reverse; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以取三个值：<br>（1） nowrap (默认)：不换行。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-b71b6e4c79ceb64b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700/format/webp" alt="img"></p>
+<p>（2）wrap：换行，第一行在上方。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-6de957f9ef4d43fa.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700/format/webp" alt="img"></p>
+<p>（3）wrap-reverse：换行，第一行在下方。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-b432b2461d51d73a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700/format/webp" alt="img"></p>
+<h2 id="3-flex-flow-属性"><a href="#3-flex-flow-属性" class="headerlink" title="3. flex-flow 属性"></a>3. flex-flow 属性</h2><p>flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123; <span class="attribute">flex-flow</span>: &lt;flex-direction&gt; &lt;flex-wrap&gt; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-align-items属性"><a href="#4-align-items属性" class="headerlink" title="4. align-items属性"></a>4. align-items属性</h2><p>align-items 属性定义flex子项在flex容器的当前行的侧轴（纵轴）方向上的对齐方式。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stretch</td>
+<td>默认值。项目被拉伸以适应容器。</td>
+</tr>
+<tr>
+<td>center</td>
+<td>项目位于容器的中心。</td>
+</tr>
+<tr>
+<td>flex-start</td>
+<td>项目位于容器的开头。</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>项目位于容器的结尾。</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>项目位于容器的基线上。</td>
+</tr>
+</tbody></table>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-b3099f9b3e8bea50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/617/format/webp" alt="img"></p>
+<h2 id="5-justify-content属性"><a href="#5-justify-content属性" class="headerlink" title="5. justify-content属性"></a>5. justify-content属性</h2><p>justify-content 用于设置或检索弹性盒子元素在主轴（横轴）方向上的对齐方式。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-start</td>
+<td>默认值。项目位于容器的开头。</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>项目位于容器的结尾。</td>
+</tr>
+<tr>
+<td>center</td>
+<td>项目位于容器的中心。</td>
+</tr>
+<tr>
+<td>space-between</td>
+<td>项目位于各行之间留有空白的容器内。</td>
+</tr>
+<tr>
+<td>space-around</td>
+<td>项目位于各行之前、之间、之后都留有空白的容器内。</td>
+</tr>
+</tbody></table>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-86f8477572e8b976.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/637/format/webp" alt="img"></p>
+<h1 id="五、弹性子元素属性"><a href="#五、弹性子元素属性" class="headerlink" title="五、弹性子元素属性"></a>五、弹性子元素属性</h1><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>order</td>
+<td>设置弹性盒子的子元素排列顺序。</td>
+</tr>
+<tr>
+<td>flex-grow</td>
+<td>设置或检索弹性盒子元素的扩展比率。</td>
+</tr>
+<tr>
+<td>flex-shrink</td>
+<td>指定了 flex 元素的收缩规则。flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。</td>
+</tr>
+<tr>
+<td>flex-basis</td>
+<td>用于设置或检索弹性盒伸缩基准值。</td>
+</tr>
+<tr>
+<td>flex</td>
+<td>设置弹性盒子的子元素如何分配空间。</td>
+</tr>
+<tr>
+<td>align-self</td>
+<td>在弹性子元素上使用。覆盖容器的 align-items 属性。</td>
+</tr>
+</tbody></table>
+<h2 id="1-order属性"><a href="#1-order属性" class="headerlink" title="1. order属性"></a>1. order属性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> <span class="selector-class">.flex-item</span> &#123; <span class="attribute">order</span>: &lt;integer&gt;; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><integer>：用整数值来定义排列顺序，数值小的排在前面。可以为负值，默认为0。</integer></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-5466d2ec3968ca3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/751/format/webp" alt="img"></p>
+<h2 id="2-flex-grow属性"><a href="#2-flex-grow属性" class="headerlink" title="2. flex-grow属性"></a>2. flex-grow属性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> <span class="selector-class">.flex-item</span> &#123; <span class="attribute">flex-grow</span>: &lt;integer&gt;; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><integer>：一个数字，规定项目将相对于其他灵活的项目进行扩展的量。默认值是 0。</integer></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-189a57eada2a12a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/802/format/webp" alt="img"></p>
+<h2 id="3-flex-shrink属性"><a href="#3-flex-shrink属性" class="headerlink" title="3. flex-shrink属性"></a>3. flex-shrink属性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> <span class="selector-class">.flex-item</span> &#123; <span class="attribute">flex-shrink</span>: &lt;integer&gt;; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><integer>：一个数字，规定项目将相对于其他灵活的项目进行收缩的量。默认值是 1。</integer></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-b55c4a8caa6d3a90.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/700/format/webp" alt="img"></p>
+<h2 id="4-flex-basis属性"><a href="#4-flex-basis属性" class="headerlink" title="4. flex-basis属性"></a>4. flex-basis属性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> <span class="selector-class">.flex-item</span> &#123; <span class="attribute">flex-basis</span>: &lt;integer&gt; | auto; &#125;</span><br></pre></td></tr></table></figure>
+
+<p><integer>：一个长度单位或者一个百分比，规定元素的初始长度。<br>auto：默认值。长度等于元素的长度。如果该项目未指定长度，则长度将根据内容决定。</integer></p>
+<h2 id="5-flex属性"><a href="#5-flex属性" class="headerlink" title="5. flex属性"></a>5. flex属性</h2><p>flex 属性用于设置或检索弹性盒模型对象的子元素如何分配空间。</p>
+<p>flex 属性是 flex-grow、flex-shrink 和 flex-basis 属性的简写属性。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> <span class="selector-class">.flex-item</span> &#123; <span class="attribute">flex</span>: flex-grow flex-shrink flex-basis | auto | initial | inherit; &#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>flex-grow</td>
+<td>一个数字，规定项目将相对于其他元素进行扩展的量。</td>
+</tr>
+<tr>
+<td>flex-shrink</td>
+<td>一个数字，规定项目将相对于其他元素进行收缩的量。</td>
+</tr>
+<tr>
+<td>flex-basis</td>
+<td>项目的长度。合法值：”auto”、”inherit” 或一个后跟 “%”、”px”、”em” 或任何其他长度单位的数字。</td>
+</tr>
+<tr>
+<td>auto</td>
+<td>与 1 1 auto 相同。</td>
+</tr>
+<tr>
+<td>none</td>
+<td>与 0 0 auto 相同。</td>
+</tr>
+<tr>
+<td>initial</td>
+<td>设置该属性为它的默认值，即为 0 1 auto。</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>从父元素继承该属性。</td>
+</tr>
+</tbody></table>
+<h2 id="6-align-self属性"><a href="#6-align-self属性" class="headerlink" title="6. align-self属性"></a>6. align-self属性</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> <span class="selector-class">.flex-item</span> &#123;</span><br><span class="line">    <span class="attribute">align-self</span>: auto | stretch | center | flex-start | flex-end | baseline | initial | inherit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auto</td>
+<td>默认值。元素继承了它的父容器的 align-items 属性。如果没有父容器则为 “stretch”。</td>
+</tr>
+<tr>
+<td>stretch</td>
+<td>元素被拉伸以适应容器。</td>
+</tr>
+<tr>
+<td>center</td>
+<td>元素位于容器的中心。</td>
+</tr>
+<tr>
+<td>flex-start</td>
+<td>元素位于容器的开头。</td>
+</tr>
+<tr>
+<td>flex-end</td>
+<td>元素位于容器的结尾。</td>
+</tr>
+<tr>
+<td>baseline</td>
+<td>元素位于容器的基线上。</td>
+</tr>
+<tr>
+<td>initial</td>
+<td>设置该属性为它的默认值。</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>从父元素继承该属性。</td>
+</tr>
+</tbody></table>
+<p><img src="https://upload-images.jianshu.io/upload_images/2326131-8dc02c66cf79f0e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/743/format/webp" alt="img"></p>
+<p>取值同 align-items。</p>
+
+
+        
+        <div class="post-announce">
+            Thank you for reading, this article belongs to
+            <a href="http://yoursite.com">永恒的金色年华</a>
+            copyright, if reproduced, please indicate the source：永恒的金色年华（<a href="http://yoursite.com/2019/11/04/css3弹性盒子布局/">http://yoursite.com/2019/11/04/css3弹性盒子布局/</a>）
+        </div>
+        
+
+        <div class="post__prevs">
+            <div class="post__prev">
+                
+                <a href="/2019/10/22/javascript-jQuery/" title="javascript+jQuery"><i class="iconfont icon-prev"></i>javascript+jQuery</a>
+                
+            </div>
+            <div class="post__prev post__prev--right">
+                
+                <a href="/2019/11/11/websocket通信基础/" title="websocket基础">websocket基础<i class="iconfont icon-next"></i></a>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+        
+        
+    </div>
+
+    <aside class="page__sidebar">
+    <!--  -->
+
+    <form id="page-search-from" class="page__search-from" action="/search/">
+        <label class="search-form__item">
+            <input class="input" type="text" name="search" placeholder="Search...">
+            <i class="iconfont icon-search"></i>
+        </label>
+    </form>
+
+    
+        <div class="sidebar__block">
+            <h3 class="block__title">Introduction</h3>
+            <p class="block__text">哈哈哈嗝~</p>
+        </div>
+    
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Categories</h3>
+        
+    </div>
+    
+    <div class="sidebar__block">
+        <h3 class="block__title">Latest Post</h3>
+        
+        <ul class="block-list latest-post-list">
+            
+                    <li class="latest-post-item">
+                        <a href="/2019/12/06/12月06日14道面试题及其答案/" title="12月06日14道面试题及其答案">
+                            <div class="item__cover">
+                                <img src="undefined" alt="12月06日14道面试题及其答案">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">12月06日14道面试题及其答案</h3>
+                                <span class="item__text">2019-12-06</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/2019/12/05/js中的跨域问题解决/" title="js中的跨域及其解决的办法">
+                            <div class="item__cover">
+                                <img src="undefined" alt="js中的跨域及其解决的办法">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">js中的跨域及其解决的办法</h3>
+                                <span class="item__text">2019-12-05</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/2019/11/16/HTML5+css3/" title="HTML5+css3">
+                            <div class="item__cover">
+                                <img src="undefined" alt="HTML5+css3">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">HTML5+css3</h3>
+                                <span class="item__text">2019-11-16</span>
+                            </div>
+                        </a>
+                    </li>
+                
+                    <li class="latest-post-item">
+                        <a href="/2019/11/16/BFC块格式化上下文/" title="BFC块格式化上下文">
+                            <div class="item__cover">
+                                <img src="undefined" alt="BFC块格式化上下文">
+                            </div>
+                            <div class="item__info">
+                                <h3 class="item__title">BFC块格式化上下文</h3>
+                                <span class="item__text">2019-11-16</span>
+                            </div>
+                        </a>
+                    </li>
+                
+        </ul>
+    
+    </div>
+
+    <div class="sidebar__block">
+        <h3 class="block__title">Tags</h3>
+        
+        <ul class="block-list tag-list clearfix">
+            
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/BFC/">BFC</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/H5-CSS3/">H5+CSS3</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/OOP面向对象思想/">OOP面向对象思想</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/Web-Worker/">Web Worker</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/ajax/">ajax</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/call和apply/">call和apply</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/css3/">css3</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/hexo搭建博客/">hexo搭建博客</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/html4/">html4</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/jQuery/">jQuery</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/javascript/">javascript</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/javascript跨域/">javascript跨域</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/js面试题/">js面试题</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/photoshop/">photoshop</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/websocket/">websocket</a>
+                    </li>  
+                
+                    <li class="tag-item">
+                        <a class="tag-link" href="/tags/函数柯里化/">函数柯里化</a>
+                    </li>  
+                
+        </ul>
+    
+    </div>
+
+    <!-- <div class="sidebar__block">
+        <h3 class="block__title">Friend Links</h3>
+        <ul class="block-list">
+            
+        </ul>
+    </div> -->
+</aside>
+</main>
+
+
+        
+            <!-- 页脚 -->
+<footer class="page__footer">
+    <section class="footer__top">
+        <div class="page__container footer__container">
+            
+            <div class="footer-top__item footer-top__item--2">
+                <h3 class="item__title">About</h3>
+                <div class="item__content">
+                    <p class="item__text"></p>
+                    <ul class="footer__contact-info">
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-address"></i>
+                            <span></span>
+                        </li>
+                        <li class="contact-info__item">
+                            <i class="iconfont icon-email2"></i>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            
+            
+            
+            
+            
+        </div>
+    </section>
+    <section class="footer__bottom">
+        <div class="page__container footer__container">
+            <p class="footer__copyright">©
+                <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank">Skapp</a> 2017 powered by
+                <a href="http://hexo.io/" target="_blank">Hexo</a>, made by 
+                <a href="https://github.com/Mrminfive" target="_blank">minfive</a>.
+            </p>
+            <ul class="footer__social-network clearfix">
+                
+            </ul>
+        </div>
+    </section>
+</footer>
+        
+
+        
+            <!-- 返回顶部 -->
+<div id="back-top" class="back-top back-top--hidden js-hidden">
+    <i class="iconfont icon-top"></i>
+</div>
+        
+    </div>
+
+    <!-- build:js /js/common.js -->
+        <script type="text/javascript" src="js/common/utils.js"></script>
+        <script type="text/javascript" src="js/common/pack.js"></script>
+        <script type="text/javascript" src="js/common/animation.js"></script>
+        <script type="text/javascript" src="js/layout/loading.js"></script>
+        <script type="text/javascript" src="js/layout/header.js"></script>
+        <script type="text/javascript" src="js/layout/back-top.js"></script>
+        <script type="text/javascript" src="js/layout/post.js"></script>
+    <!-- endbuild -->
+
+    
+    <script src="/js/page/post.js"></script>
+
+
+    
+    
+
+
+
+    <!-- 不蒜子统计 -->
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+     
+
+
+
+
+
+
+
+
+</body>
+</html>
