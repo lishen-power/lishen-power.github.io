@@ -1,213 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>javascript+jQuery | 永恒的金色年华</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MinHow,MinHow's Blog">
+  
+  <meta name="description" content="第一章：初识javascript1,javascript的三种使用方式：①在元素中，通过交互的事件使用脚本。 ②内部脚本。 ③外部脚本。 代码如下： 123456789101112131415161718192021222324&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/T">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript+jQuery">
+<meta property="og:url" content="http://yoursite.com/2019/10/22/javascript-jQuery/index.html">
+<meta property="og:site_name" content="永恒的金色年华">
+<meta property="og:description" content="第一章：初识javascript1,javascript的三种使用方式：①在元素中，通过交互的事件使用脚本。 ②内部脚本。 ③外部脚本。 代码如下： 123456789101112131415161718192021222324&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/T">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-04T09:10:10.796Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript+jQuery">
+<meta name="twitter:description" content="第一章：初识javascript1,javascript的三种使用方式：①在元素中，通过交互的事件使用脚本。 ②内部脚本。 ③外部脚本。 代码如下： 123456789101112131415161718192021222324&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/T">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-
-    
-
-    
-        <meta name="description" content="哈哈哈嗝~">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="Luking Xun">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="javascript+jQuery">
-    
-
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="哈哈哈嗝~">
-    
-
-    <!--Open Graph Site Name-->
-        <meta property="og:site_name" content="永恒的金色年华">
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article">
-    
-
-    <!--Page Cover-->
-    
-    
-        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
-    
-
-        <meta name="twitter:card" content="summary_large_image">
-
-    
-
-    
-        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
-    
-
-    <!-- Title -->
-    
-    <title>javascript+jQuery - 永恒的金色年华</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
-
-    <!-- Google Analytics -->
-    
-
-
-    <!-- favicon -->
-    
+  
+  
 
 </head>
-
-
+</html>
 <body>
-
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Configurable Title</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="/">
-                            
-                                Home
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives">
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags">
-                            
-                                Tags
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories">
-                            
-                                Categories
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
-
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>javascript+jQuery</h1>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MinHow&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
                     
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        
-                            2019-10-22
-                        
-                    </span>
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MinHow&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
                 </div>
             </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
         </div>
     </div>
 </header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-javascript-jQuery" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      javascript+jQuery
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    
-                        
-
-
-<a href="/tags/jQuery/">#jQuery</a>
-
-
-                    
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
-                </div>
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
             
-
-            <!-- Gallery -->
-            
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="第一章：初识javascript"><a href="#第一章：初识javascript" class="headerlink" title="第一章：初识javascript"></a>第一章：初识javascript</h1><h6 id="1-javascript的三种使用方式："><a href="#1-javascript的三种使用方式：" class="headerlink" title="1,javascript的三种使用方式："></a>1,javascript的三种使用方式：</h6><p>①在元素中，通过交互的事件使用脚本。</p>
+            <h1 id="第一章：初识javascript"><a href="#第一章：初识javascript" class="headerlink" title="第一章：初识javascript"></a>第一章：初识javascript</h1><h6 id="1-javascript的三种使用方式："><a href="#1-javascript的三种使用方式：" class="headerlink" title="1,javascript的三种使用方式："></a>1,javascript的三种使用方式：</h6><p>①在元素中，通过交互的事件使用脚本。</p>
 <p>②内部脚本。</p>
 <p>③外部脚本。</p>
 <p>代码如下：</p>
@@ -629,76 +561,293 @@
 
 <p>后ajax看《Ajax数据交互》</p>
 
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年11月04日 17:10</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/22/javascript-jQuery/" title="javascript+jQuery">http://yoursite.com/2019/10/22/javascript-jQuery/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="Luking Xun">
+                Luking Xun
+            </a>
+        </footer>
+    </div>
+</div>
 
-                
-            </div>
-
-            <!-- Comments -->
+      
+        
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
 
-
-                </div>
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
             
         </div>
     </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/22/javascript-jQuery/&title=《javascript+jQuery》 — 永恒的金色年华&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/22/javascript-jQuery/&title=《javascript+jQuery》 — 永恒的金色年华&source=哈哈哈嗝~" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/22/javascript-jQuery/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript+jQuery》 — 永恒的金色年华&url=http://yoursite.com/2019/10/22/javascript-jQuery/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/22/javascript-jQuery/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/22/javascript-jQuery/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/jQuery/" class="color2">jQuery</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
 </article>
 
-    <!-- Footer -->
-    <hr />
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第一章：初识javascript"><span class="post-toc-text">第一章：初识javascript</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-javascript的三种使用方式："><span class="post-toc-text">1,javascript的三种使用方式：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-javascript的执行原理："><span class="post-toc-text">2,javascript的执行原理：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3，变量的赋值和声明："><span class="post-toc-text">3，变量的赋值和声明：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#4-变量命名的规范："><span class="post-toc-text">4,变量命名的规范：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#5-数据类型："><span class="post-toc-text">5,数据类型：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#6-运算符："><span class="post-toc-text">6,运算符：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#7-字符串拼接："><span class="post-toc-text">7,字符串拼接：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#8-条件结构里的：if结构和switch结构"><span class="post-toc-text">8,条件结构里的：if结构和switch结构</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#9，循环结构："><span class="post-toc-text">9，循环结构：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#10，break语句、continue语句和return语句："><span class="post-toc-text">10，break语句、continue语句和return语句：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#11，程序调试："><span class="post-toc-text">11，程序调试：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#12-计算100以内偶数之和案例：有两个方法"><span class="post-toc-text">12,计算100以内偶数之和案例：有两个方法</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#13，乘法口诀表案例："><span class="post-toc-text">13，乘法口诀表案例：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#14，幸运大抽奖："><span class="post-toc-text">14，幸运大抽奖：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#15，数组的常见20种方法：（补充：数组只有一个属性即数组的长度length）"><span class="post-toc-text">15，数组的常见20种方法：（补充：数组只有一个属性即数组的长度length）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第二章：jQuery基础"><span class="post-toc-text">第二章：jQuery基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-为什么要使用jQuery"><span class="post-toc-text">1.为什么要使用jQuery</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-jQuery引入方法"><span class="post-toc-text">2.jQuery引入方法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-jQuery基础使用"><span class="post-toc-text">3.jQuery基础使用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-初次使用jQuery案例"><span class="post-toc-text">4.初次使用jQuery案例</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-ready-事件和window-onload事件的区别"><span class="post-toc-text">5.ready()事件和window.onload事件的区别</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-css-方法"><span class="post-toc-text">6.css()方法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-获取DOM对象的方法"><span class="post-toc-text">7.获取DOM对象的方法</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第三章：jQuery选择器"><span class="post-toc-text">第三章：jQuery选择器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-基本选择器（基本和前面javascript选择器用法基本一样）"><span class="post-toc-text">1.基本选择器（基本和前面javascript选择器用法基本一样）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-层级选择器（基本和前面javascript选择器用法基本一样）"><span class="post-toc-text">2.层级选择器（基本和前面javascript选择器用法基本一样）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-属性选择器（基本和前面javascript选择器用法基本一样）"><span class="post-toc-text">3.属性选择器（基本和前面javascript选择器用法基本一样）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-过滤选择器—基本过滤"><span class="post-toc-text">4.过滤选择器—基本过滤</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-过滤选择器—内容"><span class="post-toc-text">5.过滤选择器—内容</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-过滤选择器—可见性"><span class="post-toc-text">6.过滤选择器—可见性</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-过滤选择器—子元素选择器"><span class="post-toc-text">7.过滤选择器—子元素选择器</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-过滤选择器-表单元素"><span class="post-toc-text">8.过滤选择器-表单元素</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#9-过滤选择器-表单对象属性"><span class="post-toc-text">9.过滤选择器-表单对象属性</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第四章：jQuery选择器"><span class="post-toc-text">第四章：jQuery选择器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-DOM事件类型"><span class="post-toc-text">1.DOM事件类型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-鼠标事件"><span class="post-toc-text">2.鼠标事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-jQuery-bind绑定事件"><span class="post-toc-text">3.jQuery bind绑定事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-on绑定事件"><span class="post-toc-text">4.on绑定事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-unbind移除事件"><span class="post-toc-text">5.unbind移除事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-off移除绑定事件"><span class="post-toc-text">6.off移除绑定事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-绑定一次事件"><span class="post-toc-text">7.绑定一次事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-live动态绑定事件"><span class="post-toc-text">8.live动态绑定事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#9-on动态绑定事件"><span class="post-toc-text">9.on动态绑定事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#10-hover复合事件"><span class="post-toc-text">10.hover复合事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#11-toggle复合事件"><span class="post-toc-text">11.toggle复合事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#12-trigger模拟事件"><span class="post-toc-text">12.trigger模拟事件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#13-trigger模拟a单击"><span class="post-toc-text">13.trigger模拟a单击</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#14-css操作方法-width与height"><span class="post-toc-text">14.css操作方法-width与height</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#15-css操作方法-offset"><span class="post-toc-text">15.css操作方法-offset</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#16-scrollLeft与scrollTop"><span class="post-toc-text">16.scrollLeft与scrollTop</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#17-返回顶部"><span class="post-toc-text">17.返回顶部</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#18-系统函数数据类转换"><span class="post-toc-text">18.系统函数数据类转换</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第五章：遍历"><span class="post-toc-text">第五章：遍历</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-遍历后代元素"><span class="post-toc-text">1.遍历后代元素</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-遍历同辈"><span class="post-toc-text">2.遍历同辈</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-遍历前辈元素"><span class="post-toc-text">3.遍历前辈元素</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-过滤函数"><span class="post-toc-text">4.过滤函数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-串联"><span class="post-toc-text">5.串联</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第六章：jQuery中的DOM操作"><span class="post-toc-text">第六章：jQuery中的DOM操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-DOM操作分类：（DOM操作获取的DOM元素集合是伪数组不具有数组的方法）"><span class="post-toc-text">1.DOM操作分类：（DOM操作获取的DOM元素集合是伪数组不具有数组的方法）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-创建节点"><span class="post-toc-text">2.创建节点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-增加元素"><span class="post-toc-text">3.增加元素</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-删除元素"><span class="post-toc-text">4.删除元素</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-克隆节点"><span class="post-toc-text">5.克隆节点</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-替换"><span class="post-toc-text">6.替换</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-包裹"><span class="post-toc-text">7.包裹</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-属性操作"><span class="post-toc-text">8.属性操作</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#9-类的操作"><span class="post-toc-text">9.类的操作</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第七章：特效函数"><span class="post-toc-text">第七章：特效函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-显示与隐藏"><span class="post-toc-text">1.显示与隐藏</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-淡入淡出"><span class="post-toc-text">2.淡入淡出</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-上滑与下滑"><span class="post-toc-text">3.上滑与下滑</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-animate自定义动画"><span class="post-toc-text">4.animate自定义动画</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-stop停止动画"><span class="post-toc-text">5.stop停止动画</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-二级菜单"><span class="post-toc-text">6.二级菜单</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#第八章：正则表达式"><span class="post-toc-text">第八章：正则表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#正则表达式验证方法test-rel-返回布尔值"><span class="post-toc-text">正则表达式验证方法test(rel)返回布尔值</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-分组"><span class="post-toc-text">1.分组</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-前瞻"><span class="post-toc-text">2.前瞻</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-手机号码正则"><span class="post-toc-text">3.手机号码正则</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-贪婪模式"><span class="post-toc-text">4.贪婪模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-修饰符"><span class="post-toc-text">5.修饰符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-正则对象"><span class="post-toc-text">6.正则对象</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-正则匹配汉字"><span class="post-toc-text">7.正则匹配汉字</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
 
-                    
+<nav id="article-nav">
+  
+    <a href="/2019/11/04/css3弹性盒子布局/" id="article-nav-newer" class="article-nav-link-wrap">
 
-                    
-                        <li>
-                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          css3弹性盒子布局
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/10/22/Photoshop软件使用基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">Photoshop软件使用基础</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
-                    
 
-                    
 
-                    
-                </ul>
-                <p class="copyright text-muted">&copy; 2019 Luking Xun<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Luking Xun<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/H5-CSS3/" style="font-size: 10px;">H5+CSS3</a> <a href="/tags/OOP面向对象思想/" style="font-size: 10px;">OOP面向对象思想</a> <a href="/tags/Web-Worker/" style="font-size: 10px;">Web Worker</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/call和apply/" style="font-size: 10px;">call和apply</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/hexo搭建博客/" style="font-size: 10px;">hexo搭建博客</a> <a href="/tags/html4/" style="font-size: 10px;">html4</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript跨域/" style="font-size: 10px;">javascript跨域</a> <a href="/tags/js面试题/" style="font-size: 10px;">js面试题</a> <a href="/tags/photoshop/" style="font-size: 10px;">photoshop</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/函数柯里化/" style="font-size: 10px;">函数柯里化</a>
         </div>
     </div>
-</footer>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/H5-CSS3/" style="font-size: 10px;">H5+CSS3</a> <a href="/tags/OOP面向对象思想/" style="font-size: 10px;">OOP面向对象思想</a> <a href="/tags/Web-Worker/" style="font-size: 10px;">Web Worker</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/call和apply/" style="font-size: 10px;">call和apply</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/hexo搭建博客/" style="font-size: 10px;">hexo搭建博客</a> <a href="/tags/html4/" style="font-size: 10px;">html4</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript跨域/" style="font-size: 10px;">javascript跨域</a> <a href="/tags/js面试题/" style="font-size: 10px;">js面试题</a> <a href="/tags/photoshop/" style="font-size: 10px;">photoshop</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/函数柯里化/" style="font-size: 10px;">函数柯里化</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
 
 
-    <!-- After footer scripts -->
-    
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Disqus Comments -->
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
 
 
 
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
 </body>
-
 </html>

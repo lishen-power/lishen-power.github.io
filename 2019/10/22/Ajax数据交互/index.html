@@ -1,213 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Ajax数据交互 | 永恒的金色年华</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MinHow,MinHow's Blog">
+  
+  <meta name="description" content="Ajax数据交互 何为数据交互?  =&amp;gt;  前后端数据的交互 (前端向后端发起数据请求 ,由后端响应数据给前端) Ajax : 在浏览器与服务器之间异步加载数据 . (web2.0重要技术) 可以在不重载整个页面的情况下 ,更新页面的某一块内容    因涉及后端数据交互 ,所以需要有后端服务.(后台 / 服务器环境) 准备工作: 搭建一个本地开发测试(服务器)环境搭建一台本地的web服务器">
+<meta name="keywords" content="ajax">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax数据交互">
+<meta property="og:url" content="http://yoursite.com/2019/10/22/Ajax数据交互/index.html">
+<meta property="og:site_name" content="永恒的金色年华">
+<meta property="og:description" content="Ajax数据交互 何为数据交互?  =&amp;gt;  前后端数据的交互 (前端向后端发起数据请求 ,由后端响应数据给前端) Ajax : 在浏览器与服务器之间异步加载数据 . (web2.0重要技术) 可以在不重载整个页面的情况下 ,更新页面的某一块内容    因涉及后端数据交互 ,所以需要有后端服务.(后台 / 服务器环境) 准备工作: 搭建一个本地开发测试(服务器)环境搭建一台本地的web服务器">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-06T07:32:05.610Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ajax数据交互">
+<meta name="twitter:description" content="Ajax数据交互 何为数据交互?  =&amp;gt;  前后端数据的交互 (前端向后端发起数据请求 ,由后端响应数据给前端) Ajax : 在浏览器与服务器之间异步加载数据 . (web2.0重要技术) 可以在不重载整个页面的情况下 ,更新页面的某一块内容    因涉及后端数据交互 ,所以需要有后端服务.(后台 / 服务器环境) 准备工作: 搭建一个本地开发测试(服务器)环境搭建一台本地的web服务器">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-
-    
-
-    
-        <meta name="description" content="哈哈哈嗝~">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="Luking Xun">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="Ajax数据交互">
-    
-
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="哈哈哈嗝~">
-    
-
-    <!--Open Graph Site Name-->
-        <meta property="og:site_name" content="永恒的金色年华">
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article">
-    
-
-    <!--Page Cover-->
-    
-    
-        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
-    
-
-        <meta name="twitter:card" content="summary_large_image">
-
-    
-
-    
-        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
-    
-
-    <!-- Title -->
-    
-    <title>Ajax数据交互 - 永恒的金色年华</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
-
-    <!-- Google Analytics -->
-    
-
-
-    <!-- favicon -->
-    
+  
+  
 
 </head>
-
-
+</html>
 <body>
-
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Configurable Title</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="/">
-                            
-                                Home
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives">
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags">
-                            
-                                Tags
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories">
-                            
-                                Categories
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
-
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>Ajax数据交互</h1>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MinHow&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
                     
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        
-                            2019-10-22
-                        
-                    </span>
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MinHow&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
                 </div>
             </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
         </div>
     </div>
 </header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Ajax数据交互" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Ajax数据交互
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-22
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    
-                        
-
-
-<a href="/tags/ajax/">#ajax</a>
-
-
-                    
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
-                </div>
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
             
-
-            <!-- Gallery -->
-            
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="Ajax数据交互"><a href="#Ajax数据交互" class="headerlink" title="Ajax数据交互"></a>Ajax数据交互</h2><blockquote>
+            <h2 id="Ajax数据交互"><a href="#Ajax数据交互" class="headerlink" title="Ajax数据交互"></a>Ajax数据交互</h2><blockquote>
 <p>何为数据交互?  =&gt;  前后端数据的交互 (前端向后端发起数据请求 ,由后端响应数据给前端)</p>
 <p>Ajax : 在浏览器与服务器之间异步加载数据 . (web2.0重要技术) 可以在不重载整个页面的情况下 ,更新页面的某一块内容 </p>
 </blockquote>
@@ -391,76 +323,293 @@
 <p>​    b) 目前少数个人银行的专业版是这种做法，具体证书可能是拿U盘作为一个备份的载体。</p>
 </blockquote>
 
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年12月06日 15:32</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/22/Ajax数据交互/" title="Ajax数据交互">http://yoursite.com/2019/10/22/Ajax数据交互/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="Luking Xun">
+                Luking Xun
+            </a>
+        </footer>
+    </div>
+</div>
 
-                
-            </div>
-
-            <!-- Comments -->
+      
+        
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
 
-
-                </div>
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
             
         </div>
     </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/22/Ajax数据交互/&title=《Ajax数据交互》 — 永恒的金色年华&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/22/Ajax数据交互/&title=《Ajax数据交互》 — 永恒的金色年华&source=哈哈哈嗝~" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/22/Ajax数据交互/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ajax数据交互》 — 永恒的金色年华&url=http://yoursite.com/2019/10/22/Ajax数据交互/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/22/Ajax数据交互/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/22/Ajax数据交互/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/ajax/" class="color5">ajax</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
 </article>
 
-    <!-- Footer -->
-    <hr />
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ajax数据交互"><span class="post-toc-text">Ajax数据交互</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#因涉及后端数据交互-所以需要有后端服务-后台-服务器环境"><span class="post-toc-text">因涉及后端数据交互 ,所以需要有后端服务.(后台 / 服务器环境)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#准备工作-搭建一个本地开发测试-服务器-环境"><span class="post-toc-text">准备工作: 搭建一个本地开发测试(服务器)环境</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#常用于搭建web服务的软件"><span class="post-toc-text">常用于搭建web服务的软件:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#在真实项目的上一般会选用Linux操作系统-nginx-apache-的服务器-小型-或者个人项目可能会使用IIS的windows服务"><span class="post-toc-text">在真实项目的上一般会选用Linux操作系统(nginx / apache)的服务器 (小型,或者个人项目可能会使用IIS的windows服务)</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#访问方式"><span class="post-toc-text">访问方式:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#可以访问其他的网络设备提供的服务"><span class="post-toc-text">可以访问其他的网络设备提供的服务</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#使用FTP-上传-文件-至服务器"><span class="post-toc-text">使用FTP 上传 文件 至服务器</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#互联网上通信-只能通过-IP-地址进行寻址"><span class="post-toc-text">互联网上通信 , 只能通过 IP 地址进行寻址 .</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#经常在开发场景中-需要模拟多站点通信-apache-运行配置多个虚拟主机"><span class="post-toc-text">经常在开发场景中 , 需要模拟多站点通信  , apache 运行配置多个虚拟主机 :</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#配置本地的解析文件-C-Windows-System32-drivers-etc-hosts-在很多软件破解时也会使用到"><span class="post-toc-text">配置本地的解析文件 : C:\Windows\System32\drivers\etc\hosts  (在很多软件破解时也会使用到)</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-配置apache-的虚拟主机"><span class="post-toc-text">2.配置apache 的虚拟主机</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#jQuery-中的ajax"><span class="post-toc-text">jQuery 中的ajax:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#万能-ajax"><span class="post-toc-text">(万能)ajax()</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#异步-在同一时刻-在执行一个任务时-也可以继续执行其他任务"><span class="post-toc-text">异步: 在同一时刻 ,在执行一个任务时 ,也可以继续执行其他任务</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#同步-在同一时刻-同时只能处理一个任务-V8引擎-每次同时只能处理一个js任务-如果该任务还未执行完毕-那么下一个任务-就要等待该任务执行完之后才能进行"><span class="post-toc-text">同步:在同一时刻,同时只能处理一个任务 (V8引擎 , 每次同时只能处理一个js任务) ,如果该任务还未执行完毕,那么下一个任务,就要等待该任务执行完之后才能进行.</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#页面假死-1-页面的交互无响应-右键无反应-包括浏览器中的一些事件处理都将失去反应-2-暂停渲染"><span class="post-toc-text">页面假死 : 1.页面的交互无响应 (右键无反应 , 包括浏览器中的一些事件处理都将失去反应)  2.暂停渲染</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#post-通过http-post方式发起请求"><span class="post-toc-text">post() : 通过http post方式发起请求</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#get-通过http-get方式发起请求"><span class="post-toc-text">get() :通过http get方式发起请求</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#getScript-通过http-get请求方式-获取服务器上的一段-js脚本-并运行"><span class="post-toc-text">getScript() : 通过http get请求方式 ,获取服务器上的一段 js脚本 ,并运行</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#load-使用在jQ对象上-直接把请求的内容显示到对应的DOM上"><span class="post-toc-text">load() : 使用在jQ对象上 ,直接把请求的内容显示到对应的DOM上</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#getJSON-使用get-请求-获取服务器上的json数据"><span class="post-toc-text">getJSON() : 使用get 请求 ,获取服务器上的json数据</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#XML与JSON的区别"><span class="post-toc-text">XML与JSON的区别</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#需要具备一定的数据结构设计能力-对后端提供的数据要求-编写模拟数据"><span class="post-toc-text">需要具备一定的数据结构设计能力. ( 对后端提供的数据要求 , 编写模拟数据)</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#渲染"><span class="post-toc-text">渲染:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-后端渲染"><span class="post-toc-text">1.后端渲染:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-前端渲染-客户端渲染"><span class="post-toc-text">2.前端渲染(客户端渲染):</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#前端渲染不利于SEO优化-内容需要在客户端通过js生成-所以爬虫抓取的时候是没有内容的-或者内容不多"><span class="post-toc-text">前端渲染不利于SEO优化(内容需要在客户端通过js生成,所以爬虫抓取的时候是没有内容的,或者内容不多)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#发送数据"><span class="post-toc-text">发送数据:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#GET请求方式"><span class="post-toc-text">GET请求方式</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#POST请求方式"><span class="post-toc-text">POST请求方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#前端处理json字符串格式数据"><span class="post-toc-text">前端处理json字符串格式数据:</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-原生ajax-基础的原理"><span class="post-toc-text">1.原生ajax (基础的原理)</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#http协议"><span class="post-toc-text">http协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HTTP协议的特点-："><span class="post-toc-text">HTTP协议的特点 ：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#http协议约定浏览器端与服务器端之间的通信规范"><span class="post-toc-text">http协议约定浏览器端与服务器端之间的通信规范:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Request-告知服务器-我需要什么-你要做什么"><span class="post-toc-text">Request : (告知服务器,我需要什么,你要做什么)</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Response-告知浏览器-我给了你什么-你该怎么玩"><span class="post-toc-text">Response:(告知浏览器,我给了你什么,你该怎么玩)</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#常见的请求-响应包头"><span class="post-toc-text">常见的请求 / 响应包头:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#HTTP常见请求状态码"><span class="post-toc-text">HTTP常见请求状态码</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#HTTP请求状态码"><span class="post-toc-text">HTTP请求状态码</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#模拟一个http通信过程"><span class="post-toc-text">模拟一个http通信过程:</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-跨域-浏览器同源策略"><span class="post-toc-text">3.跨域 / 浏览器同源策略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#跨域-请求域与当前域中-只要有-【端口-协议-域名】-任何一项不同-则视为跨域"><span class="post-toc-text">跨域:请求域与当前域中 , 只要有: 【端口 , 协议 , 域名】 任何一项不同 ,则视为跨域.</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#跨域的来源-gt-浏览器的同源策略"><span class="post-toc-text">跨域的来源 = &gt;  浏览器的同源策略</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#解决跨域的方案"><span class="post-toc-text">解决跨域的方案:</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#https协议"><span class="post-toc-text">https协议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#https协议通俗比喻故事-天地会暗语"><span class="post-toc-text">https协议通俗比喻故事(天地会暗语)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HTTPS和HTTP的区别："><span class="post-toc-text">HTTPS和HTTP的区别：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HTTPS解决的问题："><span class="post-toc-text">HTTPS解决的问题：</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
 
-                    
+<nav id="article-nav">
+  
+    <a href="/2019/10/22/HTML网页基础/" id="article-nav-newer" class="article-nav-link-wrap">
 
-                    
-                        <li>
-                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          HTML网页基础
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/10/18/OOP思想-面向对象思想/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">OOP思想(面向对象思想)</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
-                    
 
-                    
 
-                    
-                </ul>
-                <p class="copyright text-muted">&copy; 2019 Luking Xun<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Luking Xun<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/H5-CSS3/" style="font-size: 10px;">H5+CSS3</a> <a href="/tags/OOP面向对象思想/" style="font-size: 10px;">OOP面向对象思想</a> <a href="/tags/Web-Worker/" style="font-size: 10px;">Web Worker</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/call和apply/" style="font-size: 10px;">call和apply</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/hexo搭建博客/" style="font-size: 10px;">hexo搭建博客</a> <a href="/tags/html4/" style="font-size: 10px;">html4</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript跨域/" style="font-size: 10px;">javascript跨域</a> <a href="/tags/js面试题/" style="font-size: 10px;">js面试题</a> <a href="/tags/photoshop/" style="font-size: 10px;">photoshop</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/函数柯里化/" style="font-size: 10px;">函数柯里化</a>
         </div>
     </div>
-</footer>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/H5-CSS3/" style="font-size: 10px;">H5+CSS3</a> <a href="/tags/OOP面向对象思想/" style="font-size: 10px;">OOP面向对象思想</a> <a href="/tags/Web-Worker/" style="font-size: 10px;">Web Worker</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/call和apply/" style="font-size: 10px;">call和apply</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/hexo搭建博客/" style="font-size: 10px;">hexo搭建博客</a> <a href="/tags/html4/" style="font-size: 10px;">html4</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript跨域/" style="font-size: 10px;">javascript跨域</a> <a href="/tags/js面试题/" style="font-size: 10px;">js面试题</a> <a href="/tags/photoshop/" style="font-size: 10px;">photoshop</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/函数柯里化/" style="font-size: 10px;">函数柯里化</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
 
 
-    <!-- After footer scripts -->
-    
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Disqus Comments -->
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
 
 
 
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
 </body>
-
 </html>

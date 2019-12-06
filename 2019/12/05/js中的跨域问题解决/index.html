@@ -1,213 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<!-- Head tag -->
+<html>
 <head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>js中的跨域及其解决的办法 | 永恒的金色年华</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MinHow,MinHow's Blog">
+  
+  <meta name="description" content="js中的跨域及其解决的办法一、什么是跨域？在了解跨域之前，首先要知道什么是同源策略（same-origin policy）。简单来讲同源策略就是浏览器为了保证用户信息的安全，防止恶意的网站窃取数据，禁止不同域之间的JS进行交互。对于浏览器而言只要域名、协议、端口其中一个不同就会引发同源策略，从而限制他们之间如下的交互行为： 1.Cookie、LocalStorage和IndexDB无法读取； 2.">
+<meta name="keywords" content="javascript跨域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js中的跨域及其解决的办法">
+<meta property="og:url" content="http://yoursite.com/2019/12/05/js中的跨域问题解决/index.html">
+<meta property="og:site_name" content="永恒的金色年华">
+<meta property="og:description" content="js中的跨域及其解决的办法一、什么是跨域？在了解跨域之前，首先要知道什么是同源策略（same-origin policy）。简单来讲同源策略就是浏览器为了保证用户信息的安全，防止恶意的网站窃取数据，禁止不同域之间的JS进行交互。对于浏览器而言只要域名、协议、端口其中一个不同就会引发同源策略，从而限制他们之间如下的交互行为： 1.Cookie、LocalStorage和IndexDB无法读取； 2.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://images2017.cnblogs.com/blog/1191190/201708/1191190-20170824154926855-473423436.png">
+<meta property="og:updated_time" content="2019-12-05T10:41:11.818Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js中的跨域及其解决的办法">
+<meta name="twitter:description" content="js中的跨域及其解决的办法一、什么是跨域？在了解跨域之前，首先要知道什么是同源策略（same-origin policy）。简单来讲同源策略就是浏览器为了保证用户信息的安全，防止恶意的网站窃取数据，禁止不同域之间的JS进行交互。对于浏览器而言只要域名、协议、端口其中一个不同就会引发同源策略，从而限制他们之间如下的交互行为： 1.Cookie、LocalStorage和IndexDB无法读取； 2.">
+<meta name="twitter:image" content="https://images2017.cnblogs.com/blog/1191190/201708/1191190-20170824154926855-473423436.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--Description-->
-
-    
-
-    
-        <meta name="description" content="哈哈哈嗝~">
-    
-
-    <!--Author-->
-    
-        <meta name="author" content="Luking Xun">
-    
-
-    <!--Open Graph Title-->
-    
-        <meta property="og:title" content="js中的跨域及其解决的办法">
-    
-
-    <!--Open Graph Description-->
-    
-        <meta property="og:description" content="哈哈哈嗝~">
-    
-
-    <!--Open Graph Site Name-->
-        <meta property="og:site_name" content="永恒的金色年华">
-
-    <!--Type page-->
-    
-        <meta property="og:type" content="article">
-    
-
-    <!--Page Cover-->
-    
-    
-        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
-    
-
-        <meta name="twitter:card" content="summary_large_image">
-
-    
-
-    
-        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
-    
-
-    <!-- Title -->
-    
-    <title>js中的跨域及其解决的办法 - 永恒的金色年华</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Gallery -->
-    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
-
-    <!-- Google Analytics -->
-    
-
-
-    <!-- favicon -->
-    
+  
+  
 
 </head>
-
-
+</html>
 <body>
-
-    <!-- Menu -->
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Configurable Title</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li>
-                        <a href="/">
-                            
-                                Home
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/archives">
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/tags">
-                            
-                                Tags
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="/categories">
-                            
-                                Categories
-                            
-                        </a>
-                    </li>
-                
-                    <li>
-                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
-                            
-                                <i class="fa fa-github fa-stack-2x"></i>
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-
-    <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
-
-<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>js中的跨域及其解决的办法</h1>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">MinHow&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
                     
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        
-                            2019-12-05
-                        
-                    </span>
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MinHow&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
                 </div>
             </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
         </div>
     </div>
 </header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-js中的跨域问题解决" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      js中的跨域及其解决的办法
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-12-05
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
-                    
-                        
-
-
-<a href="/tags/javascript跨域/">#javascript跨域</a>
-
-
-                    
-                </div>
-                <div class="col-lg-4 col-md-5 post-categories">
-                    
-                </div>
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
             
-
-            <!-- Gallery -->
-            
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 id="js中的跨域及其解决的办法"><a href="#js中的跨域及其解决的办法" class="headerlink" title="js中的跨域及其解决的办法"></a>js中的跨域及其解决的办法</h1><h3 id="一、什么是跨域？"><a href="#一、什么是跨域？" class="headerlink" title="一、什么是跨域？"></a>一、什么是跨域？</h3><p>在了解跨域之前，首先要知道什么是同源策略（same-origin policy）。简单来讲同源策略就是浏览器为了保证用户信息的安全，防止恶意的网站窃取数据，禁止不同域之间的JS进行交互。对于浏览器而言只要域名、协议、端口其中一个不同就会引发同源策略，从而限制他们之间如下的交互行为：</p>
+            <h1 id="js中的跨域及其解决的办法"><a href="#js中的跨域及其解决的办法" class="headerlink" title="js中的跨域及其解决的办法"></a>js中的跨域及其解决的办法</h1><h3 id="一、什么是跨域？"><a href="#一、什么是跨域？" class="headerlink" title="一、什么是跨域？"></a>一、什么是跨域？</h3><p>在了解跨域之前，首先要知道什么是同源策略（same-origin policy）。简单来讲同源策略就是浏览器为了保证用户信息的安全，防止恶意的网站窃取数据，禁止不同域之间的JS进行交互。对于浏览器而言只要域名、协议、端口其中一个不同就会引发同源策略，从而限制他们之间如下的交互行为：</p>
 <p>1.Cookie、LocalStorage和IndexDB无法读取；</p>
 <p>2.DOM无法获得；</p>
 <p>3.AJAX请求不能发送。</p>
@@ -379,76 +313,293 @@ iframe.onload = function(){
 <h6 id="同样的，子窗口也可以改变父窗口的片段标识符。"><a href="#同样的，子窗口也可以改变父窗口的片段标识符。" class="headerlink" title="同样的，子窗口也可以改变父窗口的片段标识符。"></a>同样的，子窗口也可以改变父窗口的片段标识符。</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parent.location.href= target + <span class="string">"#"</span> + hash;</span><br></pre></td></tr></table></figure>
 
 </body>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年12月05日 18:41</p>
+        <p>原始链接： <a class="post-url" href="/2019/12/05/js中的跨域问题解决/" title="js中的跨域及其解决的办法">http://yoursite.com/2019/12/05/js中的跨域问题解决/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="Luking Xun">
+                Luking Xun
+            </a>
+        </footer>
+    </div>
+</div>
 
-                
-            </div>
-
-            <!-- Comments -->
+      
+        
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
 
-
-                </div>
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
             
         </div>
     </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/12/05/js中的跨域问题解决/&title=《js中的跨域及其解决的办法》 — 永恒的金色年华&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/12/05/js中的跨域问题解决/&title=《js中的跨域及其解决的办法》 — 永恒的金色年华&source=哈哈哈嗝~" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/12/05/js中的跨域问题解决/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js中的跨域及其解决的办法》 — 永恒的金色年华&url=http://yoursite.com/2019/12/05/js中的跨域问题解决/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/12/05/js中的跨域问题解决/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/12/05/js中的跨域问题解决/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/javascript跨域/" class="color3">javascript跨域</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
 </article>
 
-    <!-- Footer -->
-    <hr />
 
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#js中的跨域及其解决的办法"><span class="post-toc-text">js中的跨域及其解决的办法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、什么是跨域？"><span class="post-toc-text">一、什么是跨域？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、为什么浏览器要限制跨域访问呢？"><span class="post-toc-text">二、为什么浏览器要限制跨域访问呢？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、为什么要跨域？"><span class="post-toc-text">三、为什么要跨域？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、解决跨域问题的方法："><span class="post-toc-text">四、解决跨域问题的方法：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-跨域资源共享（CORS）"><span class="post-toc-text">1.跨域资源共享（CORS）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-通过jsonp跨域"><span class="post-toc-text">2.通过jsonp跨域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#JSONP的优缺点："><span class="post-toc-text">JSONP的优缺点：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#CORS和JSONP对比："><span class="post-toc-text">CORS和JSONP对比：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-通过修改document-domain来跨子域"><span class="post-toc-text">3.通过修改document.domain来跨子域</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-使用window-name来进行跨域"><span class="post-toc-text">4.使用window.name来进行跨域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#b-html页面的代码："><span class="post-toc-text">b.html页面的代码：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#a-html页面载入后1秒，跳转到了b-html页面，结果b页面打印出了："><span class="post-toc-text">a.html页面载入后1秒，跳转到了b.html页面，结果b页面打印出了：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-使用HTML5的window-postMessage方法跨域"><span class="post-toc-text">5.使用HTML5的window.postMessage方法跨域</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-通过WebSocket进行跨域"><span class="post-toc-text">6.通过WebSocket进行跨域</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-图像ping（单向）"><span class="post-toc-text">7.图像ping（单向）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#什么是图像ping："><span class="post-toc-text">什么是图像ping：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#使用方法："><span class="post-toc-text">使用方法：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-使用片段识别符来进行跨域"><span class="post-toc-text">8.使用片段识别符来进行跨域</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#子窗口通过监听hashchange事件得到通知。"><span class="post-toc-text">子窗口通过监听hashchange事件得到通知。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#同样的，子窗口也可以改变父窗口的片段标识符。"><span class="post-toc-text">同样的，子窗口也可以改变父窗口的片段标识符。</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
 
-                    
+<nav id="article-nav">
+  
+    <a href="/2019/12/06/12月06日14道面试题及其答案/" id="article-nav-newer" class="article-nav-link-wrap">
 
-                    
-                        <li>
-                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          12月06日14道面试题及其答案
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/11/16/HTML5+css3/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">HTML5+css3</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
-                    
 
-                    
 
-                    
-                </ul>
-                <p class="copyright text-muted">&copy; 2019 Luking Xun<br></p>
-                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
-                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
-            </div>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Luking Xun<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/H5-CSS3/" style="font-size: 10px;">H5+CSS3</a> <a href="/tags/OOP面向对象思想/" style="font-size: 10px;">OOP面向对象思想</a> <a href="/tags/Web-Worker/" style="font-size: 10px;">Web Worker</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/call和apply/" style="font-size: 10px;">call和apply</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/hexo搭建博客/" style="font-size: 10px;">hexo搭建博客</a> <a href="/tags/html4/" style="font-size: 10px;">html4</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript跨域/" style="font-size: 10px;">javascript跨域</a> <a href="/tags/js面试题/" style="font-size: 10px;">js面试题</a> <a href="/tags/photoshop/" style="font-size: 10px;">photoshop</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/函数柯里化/" style="font-size: 10px;">函数柯里化</a>
         </div>
     </div>
-</footer>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/BFC/" style="font-size: 10px;">BFC</a> <a href="/tags/H5-CSS3/" style="font-size: 10px;">H5+CSS3</a> <a href="/tags/OOP面向对象思想/" style="font-size: 10px;">OOP面向对象思想</a> <a href="/tags/Web-Worker/" style="font-size: 10px;">Web Worker</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/call和apply/" style="font-size: 10px;">call和apply</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/hexo搭建博客/" style="font-size: 10px;">hexo搭建博客</a> <a href="/tags/html4/" style="font-size: 10px;">html4</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/javascript跨域/" style="font-size: 10px;">javascript跨域</a> <a href="/tags/js面试题/" style="font-size: 10px;">js面试题</a> <a href="/tags/photoshop/" style="font-size: 10px;">photoshop</a> <a href="/tags/websocket/" style="font-size: 10px;">websocket</a> <a href="/tags/函数柯里化/" style="font-size: 10px;">函数柯里化</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
 
 
-    <!-- After footer scripts -->
-    
-<!-- jQuery -->
-<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<!-- Gallery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
-<!-- Disqus Comments -->
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
 
 
 
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
 </body>
-
 </html>
