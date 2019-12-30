@@ -1,642 +1,761 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-
-
-
-
-
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="哈哈哈嗝~">
-  <meta name="author" content="Luking Xun">
-  <meta name="keywords" content="噗哈哈哈">
-  <title>永恒的金色年华</title>
-  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
-  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
+<html lang=en>
+<head>
+  <meta charset="utf-8">
   
-    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
   
-  <link rel="stylesheet" href="/css/main.css">
+  
+  <title>Hexo</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://yoursite.com/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
   
-</head>
+  
+  
+  
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 
-<body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>永恒的金色年华</strong>&nbsp;</a>
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/cofess" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">昵称</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Web Developer &amp; Designer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Shenzhen, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
 
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">主页</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">档案</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">分类目录</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">标签</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">关于</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-
-</nav>
-
-    <div class="view intro-2" id="background"
-         style="background: url('/img/樱花风景照1.jpg')no-repeat center center;
-           background-size: cover;
-           background-attachment: fixed;">
-      <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
             </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="fa fa-angle-down scroll-down-arrow"></i>
-            </div>
-          
         </div>
-      </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
     </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/19/ES6-Promise/">
-        <p class="h4 index-header">ES6 Promise</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">ES6 - Promise1.Promise异步编程需自己引入jQuery1234567891011121314151617181920212223242526272829303132333435363738&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport"          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;    &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;script src="js/jquery-v1.12.0.min</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-19&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/ES6">ES6</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/18/BootStrap框架基本使用/">
-        <p class="h4 index-header">BootStrap框架</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">BootStrap框架
-​    来自 Twitter，是目前最受欢迎的前端框架。Bootstrap 是基于 HTML、CSS、JAVASCRIPT 的，它简洁灵活，使得 Web 开发更加快捷。基于H5标准 , 秉承移动端优先 构建移动端和PC响应式网站
-
-中文文档地址: https://v3.bootcss.com/布局容器:​    .container   布局主要容器 , 跟以前的wrap一样的
-​    .container-fluid    满屏的容器 , 用于 100% 宽度，占据全部视口（viewport）的容器
-框架默认主题风格颜色:1234567891011default  灰色primary  蓝色success  绿色info     浅蓝色warning  橙色danger   红色
-
-状态样式类:1234567.active 激活.success.info.danger.warning.disabled
-
-浮动类:123456.clearfix 清除浮动.pull-left 左浮动.pull-right 右浮动不能用于导航条组件中排列导航条中的组件时可以使用</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-18&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/BootStrap">BootStrap</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/12/06/12月06日14道面试题及其答案/">
-        <p class="h4 index-header">12月06日14道面试题及其答案</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">12月06日 14道面试题及其答案1.http请求1234http请求由状态行，请求头，请求正文三部分组成：	①状态行：包括请求方式Method，资源路径URl，协议版本Version；	②请求头：包括一些访问的域名，用户代理，Cookie等等信息；	③请求正文：HTTP请求的数据(发送给服务器)；
-
-2.http请求方式常用
-    ①    get    请求指定页面的信息，并返回实体主体
-    ②    post    向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据包含在
-        请求体中。post请求可能会导致新的资源的建立和/或已有的资源的修改
-
-不常用
-    ③    head    类似get请求方式，只不过返回的响应中没有具体的内容，用于获取包头
-    ④    put    从客户端向服务器传送的数据取代指定的文档的内容
-    ⑤    delete    请求服务器删除指定的页面
-    ⑥    connect    HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器
-    ⑦    options    允许客户端</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-12-06&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/js%E9%9D%A2%E8%AF%95%E9%A2%98">js面试题</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/16/HTML5+css3/">
-        <p class="h4 index-header">HTML5+css3</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">H5+CSS31.HTML5基础①新增的网页布局结构1234567891011121314151617181920212223&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport"          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;    &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;!--H5新增的结构化标签: 增强代码的语义化 ,提供代码可读性, 提升seo优化的友好度--&gt;    &lt;header&gt; </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-16&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/H5+CSS3">H5+CSS3</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/16/BFC块格式化上下文/">
-        <p class="h4 index-header">BFC块格式化上下文</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">什么是BFC？为什么这个概念一直被提起？？为什么每一个人都解释不清BFC？？？
-什么是BFC？BFC 全称为 块格式化上下文 (Block Formatting Context) 。
-从这个概念里你能看出来什么吗？
-这个名字给我们的信息只有 “块” “格式化” “上下文” 。我们大概可以了解到这个东西是对上下文起作用的。 那里的上下文？？ HTML文档！ 它大概的作用，貌似是格式化上下文？？可能不是我们通常意义中的格式化。
-我们没有从这个名字中得到太多有用的信息，仅仅知道它是一种功能，针对于 HTML文档 起作用。
-那我们去看看官方是怎么解释的。
-MDN：
-
-一个块格式化上下文（block formatting context） 是Web页面的可视化CSS渲染出的一部分。它是块级盒布局出现的区域，也是浮动层元素进行交互的区域。 一个块格式化上下文由以下之一创建：
-
-根元素或其它包含它的元素
-浮动元素 (元素的 float 不是 none)
-绝对定位元素 (元素具有 position 为 absolute 或 fixed)
-内联块 (元素具有 display: inline-block)</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-16&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/BFC">BFC</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/14/函数柯里化/">
-        <p class="h4 index-header">函数柯里化及其使用到的案例</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">函数柯里化123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport"          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-14&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96">函数柯里化</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/14/对象的call方法和数组的apply方法/">
-        <p class="h4 index-header">对象的call方法和数组的apply方法</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">对象的call方法和数组的apply方法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot;          content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    </div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-14&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/call%E5%92%8Capply">call和apply</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/11/WebWorker处理大量计算js脚本/">
-        <p class="h4 index-header">Web Worker的原理</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">Web Workerweb worker 是运行在后台的 JavaScript，不会影响页面的性能。 = &gt; 单独在后台再开一个线程用于处理任务 ,不影响浏览器前台的js线程
-简而言之: WebWorker 就是让原本单线程JS 实现多线程的操作
-当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。 = &gt; js引擎单线程
-可以把一些计算复杂,庞大的运算逻辑通过worker去处理 这样就不会影响到前台页面的渲染
-注意: 后台线程的任务中无法操作DOM , 只要是跟浏览器前台页面交互的东西都无法完成
-没有使用webworker的代码（浏览器会先计算再进行渲染（单线程处理任务暂停页面渲染））12345678910111213141516171819&lt;!doctype html&gt;&lt;html lang="en"&gt;&lt;head&gt;    &lt;meta charset="UTF-8"&gt;    &lt;meta name="viewport"          content="width=device-width, use</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-11&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/Web%20Worker">Web Worker</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/11/websocket通信基础/">
-        <p class="h4 index-header">websocket基础</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">websocket基础websocket 通信协议特点:​        1.不受浏览器同源策略限制​        2.长连接协议​        3.双向通信协议(只要通信连接了,那么就会一直保持,除非有一端        主动断开,那就断开连接)
-http / https  / ftp 通信协议http协议特点 : (单向通信)​     1.http协议是一种无状态协议。（每次访问服务器时，没有办法识别身份）​     2.短连接协议（每次通信完毕就断开了）​     3.http协议是一种单向通信协议（只能由客户的端主动向服务器发出请求，然后接受响应，服务器端不能主动给客户端发送消息）​     4.每次发起HTTP请求时，都会将浏览器缓存的cookie发送给服务器端。​     5.每次只能处理一个请求（两张图片，就是两个请求）​     6.简单、快捷、高效
-=====================================================================================电脑上的二维码图片 : 识别结果  = &gt</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-11&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/websocket">websocket</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/11/04/css3弹性盒子布局/">
-        <p class="h4 index-header">css3弹性盒子布局</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">CSS3弹性盒布局方式
-风起云涌Hal关注
-12018.01.09 17:26:02字数 866阅读 78,971
-一、CSS3弹性盒子弹性盒子是CSS3的一种新布局模式。
-CSS3 弹性盒（ Flexible Box 或 flexbox），是一种当页面需要适应不同的屏幕大小以及设备类型时确保元素拥有恰当的行为的布局方式。
-引入弹性盒布局模型的目的是提供一种更加有效的方式来对一个容器中的子元素进行排列、对齐和分配空白空间。
-二、浏览器支持表格中的数字表示支持该属性的第一个浏览器的版本号。
-紧跟在数字后面的 -webkit- 或 -moz- 为指定浏览器的前缀。
-
-
-
-属性
-
-
-
-
-
-
-
-
-Basic support (single-line flexbox)
-29.0 21.0 -webkit-
-11.0
-22.0 18.0 -moz-
-6.1 -webkit-
-12.1 -webkit-
-
-
-Multi-line flexbox
-29.0 21.0 -webkit-
-11.0
-28.0
-6.1 -webkit-
-17.0 15.0 -webkit- 12.1
-
-
-三、CSS3 弹性盒</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-04&nbsp;&nbsp;
-        
-        
-        
-          <i class="iconfont icon-tag"></i>
-          
-            <a href="/tags/css3">css3</a>&nbsp;
-          
-        
-      </div>
-    </div>
-  </div>
-
-
-
-  <nav aria-label="index posts navigation">
-    <ul class="pagination pg-blue justify-content-center mt-5">
-      
-      
-        <li class="page-item">
-          <a class="page-link" href="/page/2/#board">下一页</a>
-        </li>
-      
-    </ul>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </main>
-
-  
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
     </div>
   </div>
 </div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFC/" rel="tag">BFC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BootStrap/" rel="tag">BootStrap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/" rel="tag">ES6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/H5-CSS3/" rel="tag">H5+CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OOP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/" rel="tag">OOP面向对象思想</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-Worker/" rel="tag">Web Worker</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/" rel="tag">ajax</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/call%E5%92%8Capply/" rel="tag">call和apply</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/" rel="tag">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" rel="tag">hexo搭建博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html4/" rel="tag">html4</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript%E8%B7%A8%E5%9F%9F/" rel="tag">javascript跨域</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">js面试题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photoshop/" rel="tag">photoshop</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/websocket/" rel="tag">websocket</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/" rel="tag">函数柯里化</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/BFC/" style="font-size: 13px;">BFC</a> <a href="/tags/BootStrap/" style="font-size: 13px;">BootStrap</a> <a href="/tags/ES6/" style="font-size: 13px;">ES6</a> <a href="/tags/H5-CSS3/" style="font-size: 13px;">H5+CSS3</a> <a href="/tags/OOP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E6%80%9D%E6%83%B3/" style="font-size: 13px;">OOP面向对象思想</a> <a href="/tags/Web-Worker/" style="font-size: 13px;">Web Worker</a> <a href="/tags/ajax/" style="font-size: 13px;">ajax</a> <a href="/tags/call%E5%92%8Capply/" style="font-size: 13px;">call和apply</a> <a href="/tags/css3/" style="font-size: 13px;">css3</a> <a href="/tags/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" style="font-size: 13px;">hexo搭建博客</a> <a href="/tags/html4/" style="font-size: 13px;">html4</a> <a href="/tags/jQuery/" style="font-size: 13px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 13px;">javascript</a> <a href="/tags/javascript%E8%B7%A8%E5%9F%9F/" style="font-size: 13px;">javascript跨域</a> <a href="/tags/js%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 13px;">js面试题</a> <a href="/tags/photoshop/" style="font-size: 13px;">photoshop</a> <a href="/tags/websocket/" style="font-size: 13px;">websocket</a> <a href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/" style="font-size: 13px;">函数柯里化</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a><span class="archive-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/12/19/ES6-Promise/" class="title">ES6 Promise</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-12-19T02:41:02.000Z" itemprop="datePublished">2019-12-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/12/18/BootStrap%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="title">BootStrap框架</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-12-18T08:06:32.000Z" itemprop="datePublished">2019-12-18</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/12/06/12%E6%9C%8806%E6%97%A514%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%8A%E5%85%B6%E7%AD%94%E6%A1%88/" class="title">12月06日14道面试题及其答案</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-12-06T08:35:55.000Z" itemprop="datePublished">2019-12-06</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/16/HTML5+css3/" class="title">HTML5+css3</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-16T02:19:49.000Z" itemprop="datePublished">2019-11-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2019/11/16/BFC%E5%9D%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87/" class="title">BFC块格式化上下文</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2019-11-16T00:32:14.000Z" itemprop="datePublished">2019-11-16</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
   
 
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
     
   </div>
+</aside>
+
+  
+  <main class="main" role="main">
+  
+  <div class="content article-list">
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/19/ES6-Promise/">ES6 Promise</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/12/19/ES6-Promise/" class="article-date">
+	  <time datetime="2019-12-19T02:41:02.000Z" itemprop="datePublished">Dec 19</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/ES6/" rel="tag">ES6</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/12/19/ES6-Promise/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/18/BootStrap%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">BootStrap框架</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/12/18/BootStrap%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="article-date">
+	  <time datetime="2019-12-18T08:06:32.000Z" itemprop="datePublished">Dec 18</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/BootStrap/" rel="tag">BootStrap</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/12/18/BootStrap%E6%A1%86%E6%9E%B6%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/06/12%E6%9C%8806%E6%97%A514%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%8A%E5%85%B6%E7%AD%94%E6%A1%88/">12月06日14道面试题及其答案</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/12/06/12%E6%9C%8806%E6%97%A514%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%8A%E5%85%B6%E7%AD%94%E6%A1%88/" class="article-date">
+	  <time datetime="2019-12-06T08:35:55.000Z" itemprop="datePublished">Dec 6</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/js%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">js面试题</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/12/06/12%E6%9C%8806%E6%97%A514%E9%81%93%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%8A%E5%85%B6%E7%AD%94%E6%A1%88/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/16/HTML5+css3/">HTML5+css3</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/16/HTML5+css3/" class="article-date">
+	  <time datetime="2019-11-16T02:19:49.000Z" itemprop="datePublished">Nov 16</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/H5-CSS3/" rel="tag">H5+CSS3</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/16/HTML5+css3/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/16/BFC%E5%9D%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87/">BFC块格式化上下文</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/16/BFC%E5%9D%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87/" class="article-date">
+	  <time datetime="2019-11-16T00:32:14.000Z" itemprop="datePublished">Nov 16</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/BFC/" rel="tag">BFC</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/16/BFC%E5%9D%97%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/14/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/">函数柯里化及其使用到的案例</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/14/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/" class="article-date">
+	  <time datetime="2019-11-14T08:42:20.000Z" itemprop="datePublished">Nov 14</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/" rel="tag">函数柯里化</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/14/%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/14/%E5%AF%B9%E8%B1%A1%E7%9A%84call%E6%96%B9%E6%B3%95%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84apply%E6%96%B9%E6%B3%95/">对象的call方法和数组的apply方法</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/14/%E5%AF%B9%E8%B1%A1%E7%9A%84call%E6%96%B9%E6%B3%95%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84apply%E6%96%B9%E6%B3%95/" class="article-date">
+	  <time datetime="2019-11-14T08:42:20.000Z" itemprop="datePublished">Nov 14</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/call%E5%92%8Capply/" rel="tag">call和apply</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/14/%E5%AF%B9%E8%B1%A1%E7%9A%84call%E6%96%B9%E6%B3%95%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84apply%E6%96%B9%E6%B3%95/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/WebWorker%E5%A4%84%E7%90%86%E5%A4%A7%E9%87%8F%E8%AE%A1%E7%AE%97js%E8%84%9A%E6%9C%AC/">Web Worker的原理</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/11/WebWorker%E5%A4%84%E7%90%86%E5%A4%A7%E9%87%8F%E8%AE%A1%E7%AE%97js%E8%84%9A%E6%9C%AC/" class="article-date">
+	  <time datetime="2019-11-11T09:27:25.000Z" itemprop="datePublished">Nov 11</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/Web-Worker/" rel="tag">Web Worker</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/11/WebWorker%E5%A4%84%E7%90%86%E5%A4%A7%E9%87%8F%E8%AE%A1%E7%AE%97js%E8%84%9A%E6%9C%AC/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/websocket%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/">websocket基础</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/11/websocket%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/" class="article-date">
+	  <time datetime="2019-11-11T09:15:25.000Z" itemprop="datePublished">Nov 11</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/websocket/" rel="tag">websocket</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/11/websocket%E9%80%9A%E4%BF%A1%E5%9F%BA%E7%A1%80/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="article-header">
+    
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/04/css3%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80/">css3弹性盒子布局</a>
+    </h1>
+  
+
+  </div>
+  
+  <p class="article-meta">
+    <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2019/11/04/css3%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80/" class="article-date">
+	  <time datetime="2019-11-04T09:08:58.000Z" itemprop="datePublished">Nov 4</time>
+	</a>
+</span>
+    
+    
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link" href="/tags/css3/" rel="tag">css3</a>
+  </span>
+
+
+    <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2019/11/04/css3%E5%BC%B9%E6%80%A7%E7%9B%92%E5%AD%90%E5%B8%83%E5%B1%80/#comments" class="article-comment-link">Comments</a></span>
+    
+  </p>
+</article>
+
+    
+  </div>
+
+  
+    
+    <nav class="bar bar-footer clearfix" data-stick-bottom>
+        <div class="bar-inner">
+        <ul class="pager pull-left">
+            
+            <li class="prev disabled">
+                <a href="javascript:;">
+                    <i class="icon icon-angle-left"></i>
+                    Prev
+                </a>
+            </li>
+            
+            
+            <li class="next">
+                <a href="/page/2/">
+                    Next
+                    <i class="icon icon-angle-right"></i>
+                </a>
+            </li>
+            
+        </ul>
+        <div class="total-article bar-right">Page 1 of 2</div>
+        </div>
+    </nav>
+    
+ 
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/cofess" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="http://weibo.com/cofess" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
 </footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
 
-<!-- SCRIPTS -->
-<script src="/lib/jquery/jquery.min.js" ></script>
-<script src="/lib/popper/popper.min.js" ></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js" ></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js" ></script>
-<script src="/js/main.js" ></script>
-
-  <script src="/js/lazyload.js" ></script>
+<script src="/js/plugin.min.js"></script>
 
 
-
-  <script src="/lib/prettify/prettify.min.js" ></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint linenums');
-      prettyPrint();
-    })
-  </script>
+<script src="/js/application.js"></script>
 
 
-  <script src="/lib/typed/typed.min.js" ></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "最美的不是下雨天,是曾与你躲过雨的屋檐~🎶&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-  <script src="/lib/anchor/anchor.min.js" ></script>
-  <script>
-    anchors.options = {
-      placement: "left",
-      visible: "false",
-      
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
     };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
 
 
 
-  <script src="/js/local-search.js" ></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
-    }
-  </script>
 
 
 
-  <script>
-    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent) || (/Safari/i.test(navigator.userAgent) && !/Chrome/i.test(navigator.userAgent))) {
-      $("#background").css("background-attachment", "scroll");
-    }
-  </script>
+   
+
+
+
+
+
+
+
+
 
 </body>
 </html>
