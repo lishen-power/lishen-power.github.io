@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Hexo</title>
+  <title>疑难杂症-21.原型的常规妙用 | Hexo</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,15 +15,15 @@
     <meta name="keywords" content="Software Engineer, Backend Engineer, Data Engineer, Android Fullstack Developer" />
   
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="Document        &#x2F;&#x2F;其实在js内置的构造函数中 ,也是把一些方法添加到对应的原型上的 (一般不会去修改原来的方法, 如果需要改善 会直接新增方法)     Array.prototype.push2 &#x3D; function () {         console.log(this) ;&#x2F;&#x2F; this  &#x3D; &gt;  arr         c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2020/01/03/hello-world/index.html">
+<meta property="og:title" content="疑难杂症-21.原型的常规妙用">
+<meta property="og:url" content="http://yoursite.com/2020/01/03/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87-21.%E5%8E%9F%E5%9E%8B%E7%9A%84%E5%B8%B8%E8%A7%84%E5%A6%99%E7%94%A8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Document        &#x2F;&#x2F;其实在js内置的构造函数中 ,也是把一些方法添加到对应的原型上的 (一般不会去修改原来的方法, 如果需要改善 会直接新增方法)     Array.prototype.push2 &#x3D; function () {         console.log(this) ;&#x2F;&#x2F; this  &#x3D; &gt;  arr         c">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-01-03T11:12:49.913Z">
-<meta property="article:modified_time" content="2019-10-17T05:21:28.440Z">
+<meta property="article:published_time" content="2020-01-03T13:40:33.597Z">
+<meta property="article:modified_time" content="2019-10-18T03:24:37.331Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -145,17 +145,12 @@ ga('send', 'pageview');
 </div>
 
 
-  <div id="toc" class="toc-article">
-    <strong class="toc-title">Posts List</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
-  </div>
-
 
 
 <div class="content content-post CENTER">
-   <article id="post-hello-world" class="article article-type-post" itemprop="blogPost">
+   <article id="post-疑难杂症-21.原型的常规妙用" class="article article-type-post" itemprop="blogPost">
   <header class="article-header">
-    <h1 class="post-title">Hello World</h1>
+    <h1 class="post-title">疑难杂症-21.原型的常规妙用</h1>
 
     <div class="article-meta">
       <span>
@@ -176,7 +171,7 @@ ga('send', 'pageview');
       
         <span>
           <i class="icon-comment"></i>
-          <a href="http://carson0321.github.io//2020/01/03/hello-world/#disqus_thread" target="_blank" rel="noopener"></a>
+          <a href="http://carson0321.github.io//2020/01/03/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87-21.%E5%8E%9F%E5%9E%8B%E7%9A%84%E5%B8%B8%E8%A7%84%E5%A6%99%E7%94%A8/#disqus_thread" target="_blank" rel="noopener"></a>
         </span>
       
 
@@ -187,20 +182,40 @@ ga('send', 'pageview');
 
   <div class="article-content">
     
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+      <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<script>
+    //其实在js内置的构造函数中 ,也是把一些方法添加到对应的原型上的 (一般不会去修改原来的方法, 如果需要改善 会直接新增方法)
+    Array.prototype.push2 = function () {
+        console.log(this) ;// this  = >  arr
+        console.log(arguments);
+        for (var i =0;i<arguments.length;i++){
+            this.push(arguments[i]*arguments[i]);
+        }
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<pre><code>}
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    var arr = [];  // = &gt; 等价于 new Array()  就是一个构造函数的实例化过程
+        // arr.push(1,2,3);
+        arr.push2(1,2,3); //  = &gt; 预期: [1 ,4, 9]
+       console.log(arr);
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+    var arr2 = [];
+        arr2.push2()
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    // 可以把一些常用的方法 ,添加到对应构造函数的原型上 ,从而实现方便的调用
 
+    // Math 数学对象, 不是一个函数 ,更不是一个构造函数,所有没有原型,无法通过原型修改</code></pre><p></script></p>
+</body>
+</html>
     
   </div>
 
@@ -308,7 +323,7 @@ ga('send', 'pageview');
   <script>
     var disqus_shortname = 'carson0321';
     
-    var disqus_url = 'http://yoursite.com/2020/01/03/hello-world/';
+    var disqus_url = 'http://yoursite.com/2020/01/03/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87-21.%E5%8E%9F%E5%9E%8B%E7%9A%84%E5%B8%B8%E8%A7%84%E5%A6%99%E7%94%A8/';
     
     (function(){
       var dsq = document.createElement('script');
