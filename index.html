@@ -131,6 +131,34 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2020/01/06/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87-27.%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%20-%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF(%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF)/">
+        <p class="h4 index-header">疑难杂症-27.面向对象 -实现继承(原型继承)</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">
+123456789101112/*    *   实现继承的思路 : 把多个类别之间相同的属性和方法抽象出来 ,作为一个父类, 然后在需要使用到父类方法的子类通过继承方式实现引用    *    *   原型继承:    *       重点：让新实例的原型等于父类的实例。            特点：1、实例可继承的属性有：实例的构造函数的属性，父类构造函数属性，父类原型的属性。（新实例不会继承父类实例的属性！）            缺点：1、新实例无法向父类构造函数传参。                  2、继承单一。                  3、所有新实例都会共享父类实例的属性。（原型上的属性是共享的，一个实例修改了原型属性，另一个实例的原型属性也会被修改！）    * */
+
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&lt;!doctype html&gt;&lt;htm</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-06&nbsp;&nbsp;
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2020/01/03/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87-32.%E5%87%BD%E6%95%B0%E6%9F%AF%E7%90%86%E5%8C%96/">
         <p class="h4 index-header">疑难杂症-32.函数柯理化</p>
         
@@ -550,54 +578,6 @@ var cat2 = new Cat(&quot;小黑&quot;,&quot;加菲</div>
    在js中, 会有比较复杂的继承关系,都是原型原型一个一个的继承 A -&gt; B -&gt; C -&gt; D 构成一个继承的关系链, 那么这条关系链就称之为 &quot;原型链&quot;
 
    如果只是单纯的使用原型, 创建的实例对象属性和</div>
-        </div>
-      </a>
-
-      <div>
-        
-          <i class="iconfont icon-riqi2"></i>&nbsp;2020-01-03&nbsp;&nbsp;
-        
-        
-        
-      </div>
-    </div>
-  </div>
-
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2020/01/03/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87-18.%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%20-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-        <p class="h4 index-header">疑难杂症-18.面向对象 -构造函数</p>
-        
-        
-          
-        
-        <div class="index-excerpt" >
-          <div class="index-text mb-1">
-
-
-    
-    
-    
-    Document
-
-
-
-    /**
-     *   使用构造函数方式来创建对象 ,解决了工厂模式下创建对象无法识别对象类型的问题
-     *   构造函数 ( 类) : 用于批量生产对象的模具 (就是模具中有什么方法功能,属性 那么通过该模具所创建出来的对象具有对相应的方法和属性)
-     *
-     *   其实 :js中内置的 Array , Date , Number , Boolean , String , Object ... 都是叫构造函数
-     *
-     *   在ES6以前的JS版本, 因为没有class( 类的概念) ,所以会把可以实现相同目的的方式(构造函数)称之为 "类"
-     */
-
-//定义一个构造函数  ( 潜规则: 一般为了与普通的函数做区分,会首字母大写)
-function Cat(name,type){
-    this.name = name;  // this 指向的是当前构造函数创建的实例对象
-    this.type = type;
-    this.catchMouse =</div>
         </div>
       </a>
 
